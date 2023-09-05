@@ -1,0 +1,369 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".DarkSettings"
+    android:background="#404040">
+
+    <TextView
+        android:id="@+id/defaultSettingsBG"
+        android:layout_width="wrap_content"
+        android:layout_height="30dp"
+        android:text="DEFAULT SETTINGS "
+        android:background="#151515"
+        android:textColor="#FFFFFF"
+        android:gravity="center"
+        android:autoSizeTextType="uniform"
+        android:layout_alignBottom="@id/DAA"
+        android:layout_alignStart="@id/defaultSettings"
+        android:layout_alignEnd="@id/defaultSettings"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="48.5dp"/>
+
+    <ToggleButton
+        android:id="@+id/ModeSet"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textOn="Light Mode"
+        android:textOff="Dark Mode"
+        android:paddingStart="10dp"
+        android:paddingEnd="10dp"
+        android:layout_alignBottom="@id/defaultSettings"
+        android:layout_marginBottom="50dp"
+        android:layout_centerHorizontal="true"
+        android:background="#AADDAC"
+        android:checked="false"/>
+
+    <TextView
+        android:id="@+id/defaultSettings"
+        android:layout_width="wrap_content"
+        android:layout_height="30dp"
+        android:text="DEFAULT SETTINGS"
+        android:background="#F86262"
+        android:textColor="#FFFFFF"
+        android:gravity="center"
+        android:autoSizeTextType="uniform"
+        android:layout_alignBottom="@id/DAA"
+        android:layout_alignStart="@id/AutoRestart"
+        android:layout_alignEnd="@id/AutoRestart"
+        android:layout_marginBottom="50dp"
+        android:paddingStart="10dp"
+        android:paddingEnd="10dp"/>
+
+    <TextView
+        android:id="@+id/NameHeading"
+        android:layout_width="match_parent"
+        android:layout_height="70dp"
+        android:textAlignment="center"
+        android:backgroundTint="#187A7A"
+        android:background="@drawable/border"
+        android:layout_centerHorizontal="true"
+        android:textSize="20sp"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Settings"
+        android:textColor="@color/white"
+        android:gravity="center"
+        android:layout_centerHorizontal="true"
+        android:layout_alignTop="@id/NameHeading"
+        android:layout_alignBottom="@id/NameHeading"
+        android:textSize="20sp"/>
+
+    <TextView
+        android:id="@+id/Player1XO"
+        android:layout_width="wrap_content"
+        android:layout_height="50dp"
+        android:text="Player 1"
+        android:textColor="#2E2E2E"
+        android:textSize="18sp"
+        android:layout_alignEnd="@id/AutoRestart"
+        android:layout_alignStart="@id/AutoRestart"
+        android:layout_alignBottom="@id/group1border"
+        android:layout_marginBottom="70dp"
+        android:gravity="center"
+        android:paddingEnd="10dp"
+        android:paddingStart="10dp"
+        android:background="#EDB3B3"/>
+
+    <TextView
+        android:id="@+id/group1border"
+        android:layout_width="350dp"
+        android:layout_height="70dp"
+        android:background="#F8EF9E"
+        android:layout_centerHorizontal="true"
+        android:layout_alignBottom="@id/AutoRestart"
+        android:layout_marginBottom="90dp"/>
+
+    <TextView
+        android:layout_width="350dp"
+        android:layout_height="70dp"
+        android:background="@drawable/border1"
+        android:layout_centerHorizontal="true"
+        android:layout_alignBottom="@id/AutoRestart"
+        android:layout_marginBottom="90dp"/>
+
+    <RadioGroup
+        android:layout_width="350dp"
+        android:layout_height="68dp"
+        android:id="@+id/XORadioGroup"
+        android:layout_alignTop="@id/group1border"
+        android:layout_alignStart="@id/group1border"
+        android:layout_alignEnd="@id/group1border"
+        android:gravity="center"
+        android:orientation="horizontal">
+
+        <RadioButton
+            android:id="@+id/X"
+            android:checked="true"
+            android:layout_width="wrap_content"
+            android:layout_height="70dp"
+            android:text="X"
+            android:textSize="20sp"
+            android:textColor="#2E2E2E" />
+
+        <TextView
+            android:layout_width="100dp"
+            android:layout_height="70dp"/>
+
+        <RadioButton
+            android:id="@+id/O"
+            android:layout_width="wrap_content"
+            android:layout_height="70dp"
+            android:text="O"
+            android:textSize="20sp"
+            android:textColor="#2E2E2E"/>
+    </RadioGroup>
+
+
+
+
+
+    <TextView
+        android:id="@+id/AutoRestart"
+        android:layout_width="wrap_content"
+        android:layout_height="50dp"
+        android:text="Restart the game"
+        android:textColor="#2E2E2E"
+        android:textSize="18sp"
+        android:layout_centerHorizontal="true"
+        android:layout_alignBottom="@id/group2border"
+        android:layout_marginBottom="70dp"
+        android:gravity="center"
+        android:paddingEnd="10dp"
+        android:paddingStart="10dp"
+        android:background="#EDB3B3"/>
+
+    <TextView
+        android:id="@+id/group2border"
+        android:layout_width="350dp"
+        android:layout_height="70dp"
+        android:background="#F8EF9E"
+        android:layout_centerInParent="true"/>
+
+    <TextView
+        android:layout_width="350dp"
+        android:layout_height="70dp"
+        android:background="@drawable/border1"
+        android:layout_centerInParent="true"/>
+
+    <RadioGroup
+        android:layout_width="350dp"
+        android:layout_height="68dp"
+        android:id="@+id/RestartRadioGroup"
+        android:layout_centerInParent="true"
+        android:gravity="center"
+        android:orientation="horizontal">
+
+        <RadioButton
+            android:id="@+id/Automatic"
+            android:layout_width="wrap_content"
+            android:layout_height="70dp"
+            android:text="Automatically"
+            android:gravity="center"
+            android:textColor="#2E2E2E"
+            android:textSize="16sp"/>
+
+        <TextView
+            android:layout_width="25dp"
+            android:layout_height="70dp"/>
+
+        <RadioButton
+            android:id="@+id/Manual"
+            android:layout_width="wrap_content"
+            android:layout_height="70dp"
+            android:text="Manually"
+            android:checked="true"
+            android:gravity="center"
+            android:textColor="#2E2E2E"
+            android:textSize="16sp"/>
+
+    </RadioGroup>
+
+    <ImageButton
+        android:id="@+id/Home"
+        android:layout_width="65dp"
+        android:layout_height="wrap_content"
+        android:layout_alignEnd="@id/NameHeading"
+        android:layout_alignTop="@id/NameHeading"
+        android:layout_alignBottom="@id/NameHeading"
+        android:src="@drawable/home_dark"
+        android:scaleType="fitCenter"
+        android:background="#187A7A"
+        android:adjustViewBounds="true"
+        android:visibility="invisible"/>
+
+    <TextView
+        android:id="@+id/totalOutlineBackBtn"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#80000000"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentTop="true"
+        android:visibility="invisible"/>
+
+    <ImageButton
+        android:id="@+id/HomeLeft"
+        android:layout_width="65dp"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@id/NameHeading"
+        android:layout_alignBottom="@id/NameHeading"
+        android:layout_alignStart="@id/NameHeading"
+        android:src="@drawable/home_dark"
+        android:scaleType="fitCenter"
+        android:background="#187A7A"
+        android:adjustViewBounds="true"/>
+
+    <ImageButton
+        android:id="@+id/BackToHome"
+        android:layout_width="60dp"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@id/NameHeading"
+        android:layout_alignBottom="@id/NameHeading"
+        android:layout_alignStart="@id/NameHeading"
+        android:layout_marginStart="5dp"
+        android:src="@drawable/backdark_two"
+        android:scaleType="fitCenter"
+        android:background="#187A7A"
+        android:adjustViewBounds="true"
+        android:paddingEnd="3dp"
+        android:visibility="invisible"/>
+
+    <TextView
+        android:id="@+id/totalOutline"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#8FFFFFFF"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentTop="true"
+        android:visibility="invisible"/>
+
+    <TextView
+        android:id="@+id/checkboxOutline"
+        android:layout_width="350dp"
+        android:layout_height="40dp"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="40dp"
+        android:layout_centerHorizontal="true"
+        android:background="@color/black"
+        android:layout_marginStart="38dp"
+        android:visibility="invisible"/>
+
+    <CheckBox
+        android:id="@+id/DAA"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Do not show settings when game starts "
+        android:layout_alignBottom="@id/checkboxOutline"
+        android:layout_alignEnd="@id/checkboxOutline"
+        android:layout_alignStart="@id/checkboxOutline"
+        android:layout_alignTop="@id/checkboxOutline"
+        android:autoSizeTextType="uniform"
+        android:checked="false"
+        android:gravity="center"
+        android:textColor="@color/white"/>
+
+    <CheckBox
+        android:id="@+id/DAADummy"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Do not show settings when game starts "
+        android:layout_alignBottom="@id/checkboxOutline"
+        android:layout_alignEnd="@id/checkboxOutline"
+        android:layout_alignStart="@id/checkboxOutline"
+        android:layout_alignTop="@id/checkboxOutline"
+        android:autoSizeTextType="uniform"
+        android:checked="true"
+        android:gravity="center"
+        android:textColor="@color/white"
+        android:visibility="invisible"/>
+
+    <ImageView
+        android:id="@+id/hand"
+        android:layout_width="70dp"
+        android:layout_height="150dp"
+        android:src="@drawable/hand"
+        android:layout_alignBottom="@id/DAA"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="40dp"
+        android:visibility="invisible"/>
+
+    <TextView
+        android:id="@+id/handAnimText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@id/hand"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="160dp"
+        android:text="Check the option to stop viewing\nsettings everytime\nthe game begins"
+        android:gravity="center"
+        android:textColor="#FFFFFF"
+        android:textSize="17sp"
+        android:autoSizeTextType="uniform"
+        android:background="@color/black"
+        android:paddingStart="5dp"
+        android:paddingEnd="5dp"
+        android:paddingBottom="5dp"
+        android:paddingTop="5dp"
+        android:visibility="invisible"/>
+
+    <ImageView
+        android:id="@+id/handBackBtn"
+        android:layout_width="150dp"
+        android:layout_height="120dp"
+        android:src="@drawable/hand"
+        android:layout_alignBottom="@id/Player1XO"
+        android:layout_marginBottom="20dp"
+        android:layout_centerHorizontal="true"
+        android:layout_alignStart="@id/XORadioGroup"
+        android:rotation="142"
+        android:paddingStart="40dp"
+        android:paddingEnd="20dp"
+        android:paddingBottom="40dp"
+        android:paddingTop="10dp"
+        android:visibility="invisible"/>
+
+    <TextView
+        android:id="@+id/handAnimTextBack"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@id/handBackBtn"
+        android:layout_marginTop="130dp"
+        android:layout_alignStart="@id/handBackBtn"
+        android:layout_marginStart="40dp"
+        android:text="Click on the Back button\nto go to the\nHome Screen"
+        android:gravity="center"
+        android:textColor="#FFFFFF"
+        android:textSize="17sp"
+        android:autoSizeTextType="uniform"
+        android:background="@color/black"
+        android:paddingStart="5dp"
+        android:paddingEnd="5dp"
+        android:paddingBottom="5dp"
+        android:paddingTop="5dp"
+        android:visibility="invisible"/>
+
+</RelativeLayout>

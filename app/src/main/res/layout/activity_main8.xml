@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity8">
+
+    <TextView
+        android:id="@+id/DarkBackground"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#404040"
+        android:visibility="invisible"/>
+
+
+    <TextView
+        android:id="@+id/NameHeading"
+        android:layout_width="match_parent"
+        android:layout_height="70dp"
+        android:textAlignment="center"
+        android:background="#1D9F9F"
+        android:layout_centerHorizontal="true"
+        android:textSize="20sp"
+        android:visibility="invisible"/>
+
+    <TextView
+        android:id="@+id/NameHeadingDark"
+        android:layout_width="match_parent"
+        android:layout_height="70dp"
+        android:textAlignment="center"
+        android:background="#187A7A"
+        android:layout_centerHorizontal="true"
+        android:textSize="20sp"
+        android:visibility="invisible"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="70dp"
+        android:text="High Score Till Date"
+        android:textColor="@color/white"
+        android:layout_alignTop="@id/NameHeading"
+        android:layout_alignBottom="@id/NameHeading"
+        android:layout_centerHorizontal="true"
+        android:gravity="center"
+        android:textSize="20sp"/>
+
+    <TextView
+        android:id="@+id/playerNameTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="50dp"
+        android:text="Player Name"
+        android:textColor="#2E2E2E"
+        android:textSize="18sp"
+        android:layout_alignBottom="@id/PlayerName"
+        android:layout_marginBottom="70dp"
+        android:layout_centerHorizontal="true"
+        android:gravity="center"
+        android:background="#EDB3B3"
+        android:paddingEnd="10dp"
+        android:paddingStart="10dp"/>
+
+    <TextView
+        android:id="@+id/PlayerName"
+        android:layout_width="350dp"
+        android:layout_height="70dp"
+        android:background="#B9F1BB"
+        android:layout_alignBottom="@id/playerScoreTitle"
+        android:layout_marginBottom="100dp"
+        android:layout_centerHorizontal="true"
+        android:text="-"
+        android:textColor="#2E2E2E"
+        android:textAlignment="center"
+        android:textSize="18sp"
+        android:gravity="center"/>
+
+    <TextView
+        android:layout_width="350dp"
+        android:layout_height="70dp"
+        android:background="@drawable/border1"
+        android:layout_alignBottom="@id/playerScoreTitle"
+        android:layout_marginBottom="100dp"
+        android:layout_centerHorizontal="true"/>
+
+
+    <TextView
+        android:id="@+id/playerScoreTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="50dp"
+        android:text="Total Score"
+        android:textColor="#2E2E2E"
+        android:textSize="18sp"
+        android:layout_centerInParent="true"
+        android:gravity="center"
+        android:background="#EDB3B3"
+        android:layout_alignEnd="@id/playerNameTitle"
+        android:layout_alignStart="@id/playerNameTitle"/>
+
+    <TextView
+        android:id="@+id/PlayerScore"
+        android:layout_width="350dp"
+        android:layout_height="70dp"
+        android:background="#B9F1BB"
+        android:layout_alignTop="@id/playerScoreTitle"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="50dp"
+        android:text="0"
+        android:textColor="#2E2E2E"
+        android:textAlignment="center"
+        android:textSize="18sp"
+        android:gravity="center"/>
+
+    <TextView
+        android:layout_width="350dp"
+        android:layout_height="70dp"
+        android:background="@drawable/border1"
+        android:layout_alignTop="@id/playerScoreTitle"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="50dp"/>
+
+    <ImageButton
+        android:id="@+id/BackToHome"
+        android:layout_width="60dp"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@id/NameHeading"
+        android:layout_alignBottom="@id/NameHeading"
+        android:layout_alignStart="@id/NameHeading"
+        android:layout_marginStart="5dp"
+        android:src="@drawable/arrow"
+        android:scaleType="fitCenter"
+        android:background="#1D9F9F"
+        android:adjustViewBounds="true"
+        android:visibility="invisible"/>
+
+    <ImageButton
+        android:id="@+id/BackToHomeDark"
+        android:layout_width="60dp"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@id/NameHeading"
+        android:layout_alignBottom="@id/NameHeading"
+        android:layout_alignStart="@id/NameHeading"
+        android:layout_marginStart="5dp"
+        android:src="@drawable/backdark_two"
+        android:scaleType="fitCenter"
+        android:background="#187A7A"
+        android:adjustViewBounds="true"
+        android:visibility="invisible"/>
+
+</RelativeLayout>

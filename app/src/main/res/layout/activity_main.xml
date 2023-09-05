@@ -1,0 +1,239 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity"
+    android:background="#BA7C7C">
+
+    <Button
+        android:id="@+id/highScore"
+        android:layout_width="190dp"
+        android:layout_height="60dp"
+        android:text="High Score"
+        android:backgroundTint="#4CAF50"
+        android:layout_centerHorizontal="true"
+        android:layout_alignBottom="@id/Home"
+        android:layout_marginBottom="70dp"
+        android:textSize="16sp"/>
+
+    <TextView
+        android:id="@+id/Tap"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="TAP on the box"
+        android:layout_centerInParent="true"
+        android:textColor="#EFECEC"
+        android:textSize="15sp"/>
+
+    <TextView
+        android:id="@+id/StartAnimAgain"
+        android:layout_width="205dp"
+        android:layout_height="205dp"
+        android:layout_alignBottom="@id/Tap"
+        android:layout_marginBottom="40dp"
+        android:layout_centerHorizontal="true"
+        android:background="#75D1DD"/>
+
+    <TextView
+        android:layout_width="205dp"
+        android:layout_height="205dp"
+        android:layout_alignBottom="@id/StartAnimAgain"
+        android:layout_alignTop="@id/StartAnimAgain"
+        android:layout_alignStart="@id/StartAnimAgain"
+        android:layout_alignEnd="@id/StartAnimAgain"
+        android:background="@drawable/border1"/>
+
+    <TextView
+        android:id="@+id/FBox"
+        android:layout_width="67dp"
+        android:layout_height="67dp"
+        android:background="#32FD3A"
+        android:text="O"
+        android:textColor="@color/black"
+        android:textSize="30sp"
+        android:gravity="center"
+        android:layout_alignTop="@id/StartAnimAgain"
+        android:layout_marginTop="2dp"
+        android:layout_alignStart="@id/StartAnimAgain"
+        android:layout_marginStart="2dp"/>
+
+    <TextView
+        android:id="@+id/SBox"
+        android:layout_width="67dp"
+        android:layout_height="67dp"
+        android:layout_alignBottom="@id/TBox"
+        android:layout_marginBottom="67dp"
+        android:layout_alignStart="@id/FBox"
+        android:layout_marginStart="67dp"
+        android:background="#32FD3A"
+        android:text="O"
+        android:textColor="@color/black"
+        android:textSize="30sp"
+        android:gravity="center"/>
+
+    <TextView
+        android:id="@+id/TBox"
+        android:layout_width="67dp"
+        android:layout_height="67dp"
+        android:background="#32FD3A"
+        android:layout_alignStart="@id/SBox"
+        android:layout_marginStart="67dp"
+        android:layout_alignBottom="@id/StartAnimAgain"
+        android:layout_marginBottom="2dp"
+        android:text="O"
+        android:textColor="@color/black"
+        android:textSize="30sp"
+        android:gravity="center"/>
+
+    <TextView
+        android:id="@+id/FLine"
+        android:layout_width="205dp"
+        android:layout_height="205dp"
+        android:background="@drawable/shapes4"
+        android:layout_alignEnd="@id/StartAnimAgain"
+        android:layout_marginEnd="33.5dp"
+        android:layout_alignTop="@id/StartAnimAgain"
+        android:layout_alignBottom="@id/StartAnimAgain"/>
+
+    <TextView
+        android:id="@+id/SLine"
+        android:layout_width="205dp"
+        android:layout_height="205dp"
+        android:background="@drawable/shapes4"
+        android:layout_alignStart="@id/StartAnimAgain"
+        android:layout_marginStart="33.5dp"
+        android:layout_alignTop="@id/StartAnimAgain"
+        android:layout_alignBottom="@id/StartAnimAgain"/>
+
+    <TextView
+        android:id="@+id/TLine"
+        android:layout_width="205dp"
+        android:layout_height="205dp"
+        android:background="@drawable/shapes3"
+        android:layout_alignBottom="@id/SBox"
+        android:layout_marginBottom="-35.5dp"
+        android:layout_centerHorizontal="true"/>
+
+    <TextView
+        android:id="@+id/FoLine"
+        android:layout_width="205dp"
+        android:layout_height="205dp"
+        android:background="@drawable/shapes3"
+        android:layout_alignTop="@id/SBox"
+        android:layout_marginTop="-35.5dp"
+        android:layout_centerHorizontal="true"/>
+
+    <TextView
+        android:id="@+id/WinLine"
+        android:layout_width="290dp"
+        android:layout_height="205dp"
+        android:layout_alignBottom="@id/StartAnimAgain"
+        android:layout_centerHorizontal="true"
+        android:background="@drawable/shapes5"
+        android:backgroundTint="#FA0303" />
+
+    <Button
+        android:id="@+id/Proceed"
+        android:layout_width="250dp"
+        android:layout_height="80dp"
+        android:text="Proceed"
+        android:layout_centerHorizontal="true"
+        android:textSize="18sp"
+        android:backgroundTint="#FFC107"
+        android:textColor="#454444"
+        android:layout_alignBottom="@id/Continue"
+        android:layout_marginBottom="25dp"/>
+
+    <TextView
+        android:id="@+id/Continue"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:hint="(Click on the PROCEED button to continue)"
+        android:textAlignment="center"
+        android:textColorHint="#EAE7E7"
+        android:layout_alignBottom="@id/highScore"
+        android:layout_marginBottom="110dp"
+        android:layout_centerHorizontal="true"
+        android:textSize="15sp"/>
+
+    <TextView
+        android:id="@+id/Home"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:text="HOME"
+        android:textAlignment="center"
+        android:gravity="center"
+        android:background="@drawable/border"
+        android:layout_alignParentBottom="true"
+        android:backgroundTint="#1D9F9F"
+        android:textColor="@color/white"
+        android:layout_centerHorizontal="true"
+        android:textSize="15sp"/>
+
+    <TextView
+        android:id="@+id/NameHeading"
+        android:layout_width="match_parent"
+        android:layout_height="70dp"
+        android:textAlignment="center"
+        android:backgroundTint="#1D9F9F"
+        android:background="@drawable/border"
+        android:layout_centerHorizontal="true"
+        android:textSize="20sp"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="70dp"
+        android:text="TicTacToe"
+        android:textColor="@color/white"
+        android:textAlignment="center"
+        android:layout_centerHorizontal="true"
+        android:layout_alignBottom="@id/NameHeading"
+        android:layout_alignTop="@id/NameHeading"
+        android:gravity="center"
+        android:textSize="20sp"/>
+
+    <ImageButton
+        android:id="@+id/Next"
+        android:layout_width="60dp"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@id/NameHeading"
+        android:layout_alignBottom="@id/NameHeading"
+        android:layout_alignEnd="@id/NameHeading"
+        android:layout_marginEnd="5dp"
+        android:src="@drawable/arrowflip"
+        android:scaleType="fitCenter"
+        android:background="#1D9F9F"
+        android:adjustViewBounds="true"/>
+
+    <TextView
+        android:layout_width="35dp"
+        android:layout_height="wrap_content"
+        android:textAlignment="center"
+        android:background="@drawable/border1"
+        android:layout_alignParentStart="true"
+        android:layout_marginStart="13.5dp"
+        android:layout_alignBottom="@id/NameHeading"
+        android:layout_marginBottom="16dp"
+        android:layout_alignTop="@id/NameHeading"
+        android:layout_marginTop="19dp"
+        android:backgroundTint="#4A4948"/>
+
+    <TextView
+        android:id="@+id/Settings"
+        android:layout_width="35dp"
+        android:layout_height="wrap_content"
+        android:textSize="20sp"
+        android:gravity="center"
+        android:background="@drawable/border1"
+        android:text="="
+        android:textStyle="bold"
+        android:layout_alignParentStart="true"
+        android:layout_marginStart="15dp"
+        android:layout_alignBottom="@id/NameHeading"
+        android:layout_marginBottom="17.5dp"
+        android:layout_alignTop="@id/NameHeading"
+        android:layout_marginTop="17.5dp"
+        android:backgroundTint="#F69E4F"/>
+</RelativeLayout>

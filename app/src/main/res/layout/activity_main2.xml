@@ -1,0 +1,364 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity2"
+    android:background="#EFEEEE">
+
+    <TextView
+        android:id="@+id/DarkBackground"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#404040"
+        android:visibility="invisible"/>
+
+    <TextView
+        android:id="@+id/MaxChar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="(Maximum 10 characters)"
+        android:layout_centerInParent="true"
+        android:textSize="16sp"
+        android:textColor="#353434"
+        android:visibility="invisible"/>
+
+    <TextView
+        android:id="@+id/MaxCharDark"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="(Maximum 10 characters)"
+        android:layout_centerInParent="true"
+        android:textSize="16sp"
+        android:textColor="#FFFFFF"
+        android:visibility="invisible"/>
+
+    <TextView
+        android:id="@+id/EnterNames"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="(Please enter names in both the fields)"
+        android:layout_centerInParent="true"
+        android:textSize="16sp"
+        android:textColor="#ED675D"
+        android:visibility="invisible"/>
+
+    <TextView
+        android:id="@+id/EnterNamesDark"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="(Please enter names in both the fields)"
+        android:layout_centerInParent="true"
+        android:textSize="16sp"
+        android:textColor="#FD8B83"
+        android:visibility="invisible"/>
+
+    <TextView
+        android:id="@+id/ProceedMessage"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:text="(You can proceed)"
+        android:textColor="#35B13A"
+        android:textSize="16sp"
+        android:visibility="invisible"/>
+
+    <TextView
+        android:id="@+id/ProceedMessageDark"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:text="(You can proceed)"
+        android:textColor="#5EFA64"
+        android:textSize="16sp"
+        android:visibility="invisible"/>
+
+    <TextView
+        android:id="@+id/VS"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="VS"
+        android:textSize="16sp"
+        android:gravity="center"
+        android:layout_alignTop="@id/P1NameBox"
+        android:layout_alignBottom="@id/P2NameBox"
+        android:textColor="@color/black"
+        android:layout_centerHorizontal="true"
+        android:visibility="invisible"/>
+
+    <TextView
+        android:id="@+id/VSDark"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="VS"
+        android:textSize="16sp"
+        android:gravity="center"
+        android:layout_alignTop="@id/P1NameBox"
+        android:layout_alignBottom="@id/P2NameBox"
+        android:textColor="@color/white"
+        android:layout_centerHorizontal="true"
+        android:visibility="invisible"/>
+
+    <TextView
+        android:id="@+id/NameHeading"
+        android:layout_width="match_parent"
+        android:layout_height="70dp"
+        android:textAlignment="center"
+        android:backgroundTint="#1D9F9F"
+        android:background="@drawable/border"
+        android:layout_centerHorizontal="true"
+        android:textSize="20sp"
+        android:visibility="invisible"/>
+
+    <TextView
+        android:id="@+id/NameHeadingDark"
+        android:layout_width="match_parent"
+        android:layout_height="70dp"
+        android:textAlignment="center"
+        android:backgroundTint="#187A7A"
+        android:background="@drawable/border"
+        android:layout_centerHorizontal="true"
+        android:textSize="20sp"
+        android:visibility="invisible"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="70dp"
+        android:text="Player Names"
+        android:textColor="@color/white"
+        android:gravity="center"
+        android:layout_centerHorizontal="true"
+        android:layout_alignTop="@id/NameHeading"
+        android:textSize="20sp"/>
+
+    <TextView
+        android:id="@+id/P1NameBox"
+        android:layout_width="350dp"
+        android:layout_height="70dp"
+        android:layout_alignBottom="@id/P2NameBox"
+        android:layout_marginBottom="110dp"
+        android:layout_centerHorizontal="true"
+        android:background="#F6F2CC"/>
+
+    <TextView
+        android:id="@+id/P2NameBox"
+        android:layout_width="350dp"
+        android:layout_height="70dp"
+        android:layout_centerHorizontal="true"
+        android:layout_alignBottom="@id/MaxChar"
+        android:layout_marginBottom="40dp"
+        android:background="#F6F2CC"/>
+
+    <TextView
+        android:id="@+id/P1BoxBorder"
+        android:layout_width="350dp"
+        android:layout_height="70dp"
+        android:layout_alignBottom="@id/P2NameBox"
+        android:layout_marginBottom="110dp"
+        android:layout_centerHorizontal="true"
+        android:background="@drawable/border1"/>
+
+    <TextView
+        android:id="@+id/P2BoxBorder"
+        android:layout_width="350dp"
+        android:layout_height="70dp"
+        android:layout_alignBottom="@id/MaxChar"
+        android:layout_marginBottom="40dp"
+        android:layout_centerHorizontal="true"
+        android:background="@drawable/border1"/>
+
+    <EditText
+        android:id="@+id/player1Name"
+        android:layout_width="350dp"
+        android:layout_height="70dp"
+        android:textSize="19sp"
+        android:maxLength="10"
+        android:gravity="center"
+        android:layout_alignBottom="@id/P1NameBox"
+        android:layout_alignTop="@id/P1NameBox"
+        android:layout_centerHorizontal="true"
+        android:textColor="@color/black"
+        android:textColorHint="#A3A2A2"
+        android:background="@null"
+        android:inputType="text"/>
+
+    <EditText
+        android:id="@+id/player2Name"
+        android:layout_width="350dp"
+        android:layout_height="70dp"
+        android:textSize="19sp"
+        android:maxLength="10"
+        android:gravity="center"
+        android:layout_alignBottom="@id/P2NameBox"
+        android:layout_alignTop="@id/P2NameBox"
+        android:layout_centerHorizontal="true"
+        android:textColor="@color/black"
+        android:textColorHint="#A3A2A2"
+        android:background="@null"
+        android:inputType="text"/>
+
+    <Button
+        android:id="@+id/StartGame"
+        android:layout_width="300dp"
+        android:layout_height="80dp"
+        android:layout_alignTop="@id/MaxChar"
+        android:layout_marginTop="85dp"
+        android:layout_centerHorizontal="true"
+        android:textSize="18sp"
+        android:textColor="#454444"
+        android:backgroundTint="#FFC107"
+        android:text="Start game"
+        android:visibility="invisible"/>
+
+    <Button
+        android:id="@+id/StartGameDark"
+        android:layout_width="300dp"
+        android:layout_height="80dp"
+        android:layout_alignTop="@id/MaxChar"
+        android:layout_marginTop="85dp"
+        android:layout_centerHorizontal="true"
+        android:textSize="18sp"
+        android:textColor="#FFFFFF"
+        android:backgroundTint="#E1AA05"
+        android:text="Start game"
+        android:visibility="invisible"/>
+
+    <TextView
+        android:id="@+id/InfoScreen"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:text="INFORMATION SCREEN"
+        android:gravity="center"
+        android:background="@drawable/border"
+        android:layout_alignParentBottom="true"
+        android:backgroundTint="#1D9F9F"
+        android:textColor="@color/white"
+        android:layout_centerHorizontal="true"
+        android:textSize="15sp"
+        android:visibility="invisible"/>
+
+    <TextView
+        android:id="@+id/InfoScreenDark"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:text="INFORMATION SCREEN"
+        android:gravity="center"
+        android:background="@drawable/border"
+        android:layout_alignParentBottom="true"
+        android:backgroundTint="#187A7A"
+        android:textColor="@color/white"
+        android:layout_centerHorizontal="true"
+        android:textSize="15sp"
+        android:visibility="invisible"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="☑"
+        android:gravity="center"
+        android:textColor="#4CAF50"
+        android:textSize="25sp"
+        android:layout_alignEnd="@id/P1NameBox"
+        android:layout_marginEnd="10dp"
+        android:layout_alignBottom="@id/P1NameBox"
+        android:layout_alignTop="@id/P1NameBox"
+        android:id="@+id/TickP1"
+        android:visibility="invisible"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="☑"
+        android:textColor="#4CAF50"
+        android:textSize="25sp"
+        android:gravity="center"
+        android:layout_alignEnd="@id/P2NameBox"
+        android:layout_marginEnd="10dp"
+        android:layout_alignTop="@id/P2NameBox"
+        android:layout_alignBottom="@id/P2NameBox"
+        android:id="@+id/TickP2"
+        android:visibility="invisible"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="☒"
+        android:textColor="#F44336"
+        android:textSize="25sp"
+        android:gravity="center"
+        android:layout_alignEnd="@id/P1NameBox"
+        android:layout_marginEnd="10dp"
+        android:layout_alignBottom="@id/P1NameBox"
+        android:layout_alignTop="@id/P1NameBox"
+        android:id="@+id/CrossP1"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="☒"
+        android:textColor="#F44336"
+        android:textSize="25sp"
+        android:gravity="center"
+        android:layout_alignEnd="@id/P2NameBox"
+        android:layout_marginEnd="10dp"
+        android:layout_alignTop="@id/P2NameBox"
+        android:layout_alignBottom="@id/P2NameBox"
+        android:id="@+id/CrossP2"/>
+
+    <ImageButton
+        android:id="@+id/BackBtn"
+        android:layout_width="60dp"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@id/NameHeading"
+        android:layout_alignBottom="@id/NameHeading"
+        android:layout_alignStart="@id/NameHeading"
+        android:layout_marginStart="5dp"
+        android:src="@drawable/arrow"
+        android:scaleType="fitCenter"
+        android:background="#1D9F9F"
+        android:adjustViewBounds="true"
+        android:visibility="invisible"/>
+
+    <ImageButton
+        android:id="@+id/BackBtnDark"
+        android:layout_width="60dp"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@id/NameHeading"
+        android:layout_alignBottom="@id/NameHeading"
+        android:layout_alignStart="@id/NameHeading"
+        android:layout_marginStart="5dp"
+        android:src="@drawable/backdark_two"
+        android:scaleType="fitCenter"
+        android:background="#187A7A"
+        android:adjustViewBounds="true"
+        android:visibility="invisible"/>
+
+    <ImageButton
+        android:id="@+id/Next2"
+        android:layout_width="60dp"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@id/NameHeading"
+        android:layout_alignBottom="@id/NameHeading"
+        android:layout_alignEnd="@id/NameHeading"
+        android:layout_marginEnd="5dp"
+        android:src="@drawable/arrowflip"
+        android:scaleType="fitCenter"
+        android:background="#1D9F9F"
+        android:adjustViewBounds="true"
+        android:visibility="invisible"/>
+
+    <ImageButton
+        android:id="@+id/Next2Dark"
+        android:layout_width="60dp"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@id/NameHeading"
+        android:layout_alignBottom="@id/NameHeading"
+        android:layout_alignEnd="@id/NameHeading"
+        android:layout_marginEnd="5dp"
+        android:src="@drawable/backdark"
+        android:scaleType="fitCenter"
+        android:background="#187A7A"
+        android:adjustViewBounds="true"
+        android:visibility="invisible"/>
+</RelativeLayout>

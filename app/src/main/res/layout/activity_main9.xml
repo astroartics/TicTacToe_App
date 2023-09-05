@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity9"
+    android:background="@drawable/border"
+    android:backgroundTint="#3A5153">
+
+    <TextView
+        android:id="@+id/center"
+        android:layout_width="20dp"
+        android:layout_height="20dp"
+        android:layout_centerInParent="true"/>
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="250dp"
+        android:layout_height="200dp"
+        android:layout_centerHorizontal="true"
+        android:layout_alignBottom="@id/center"
+        android:layout_marginBottom="-10dp"
+        android:src="@drawable/drawing"
+        android:contentDescription="@string/app_name" />
+
+    <ProgressBar
+        android:id="@+id/progressBar"
+        style="?android:attr/progressBarStyleHorizontal"
+        android:layout_width="200dp"
+        android:layout_height="40dp"
+        android:layout_alignTop="@id/loading"
+        android:layout_marginTop="20dp"
+        android:layout_centerHorizontal="true"/>
+
+    <TextView
+        android:id="@+id/loading"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Loading..."
+        android:textColor="#B6B5B5"
+        android:layout_alignTop="@id/imageView"
+        android:layout_marginTop="250dp"
+        android:layout_centerHorizontal="true"/>
+
+</RelativeLayout>
