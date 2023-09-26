@@ -121,7 +121,7 @@ public class MainActivity6 extends AppCompatActivity {
 
 
 
-        BounceButtons();
+        BounceButtons(1);
 
         Back.setOnClickListener(v -> {
             if(gameStarted==1) {
@@ -247,6 +247,7 @@ public class MainActivity6 extends AppCompatActivity {
 
             SettingsBorder.setVisibility(View.INVISIBLE);
             Settings.setVisibility(View.INVISIBLE);
+            BounceButtons(0);
             gameStarted=1;
 
             BoxAnim(B1);
@@ -274,6 +275,7 @@ public class MainActivity6 extends AppCompatActivity {
 
             SettingsBorder.setVisibility(View.INVISIBLE);
             Settings.setVisibility(View.INVISIBLE);
+            BounceButtons(0);
             gameStarted=1;
 
             BoxAnim(B2);
@@ -301,6 +303,7 @@ public class MainActivity6 extends AppCompatActivity {
 
             SettingsBorder.setVisibility(View.INVISIBLE);
             Settings.setVisibility(View.INVISIBLE);
+            BounceButtons(0);
             gameStarted=1;
 
             BoxAnim(B3);
@@ -328,6 +331,7 @@ public class MainActivity6 extends AppCompatActivity {
 
             SettingsBorder.setVisibility(View.INVISIBLE);
             Settings.setVisibility(View.INVISIBLE);
+            BounceButtons(0);
             gameStarted=1;
 
             BoxAnim(B4);
@@ -355,6 +359,7 @@ public class MainActivity6 extends AppCompatActivity {
 
             SettingsBorder.setVisibility(View.INVISIBLE);
             Settings.setVisibility(View.INVISIBLE);
+            BounceButtons(0);
             gameStarted=1;
 
             BoxAnim(B5);
@@ -382,6 +387,7 @@ public class MainActivity6 extends AppCompatActivity {
 
             SettingsBorder.setVisibility(View.INVISIBLE);
             Settings.setVisibility(View.INVISIBLE);
+            BounceButtons(0);
             gameStarted=1;
 
             BoxAnim(B6);
@@ -409,6 +415,7 @@ public class MainActivity6 extends AppCompatActivity {
 
             SettingsBorder.setVisibility(View.INVISIBLE);
             Settings.setVisibility(View.INVISIBLE);
+            BounceButtons(0);
             gameStarted=1;
 
             BoxAnim(B7);
@@ -436,6 +443,7 @@ public class MainActivity6 extends AppCompatActivity {
 
             SettingsBorder.setVisibility(View.INVISIBLE);
             Settings.setVisibility(View.INVISIBLE);
+            BounceButtons(0);
             gameStarted=1;
 
             BoxAnim(B8);
@@ -463,6 +471,7 @@ public class MainActivity6 extends AppCompatActivity {
 
             SettingsBorder.setVisibility(View.INVISIBLE);
             Settings.setVisibility(View.INVISIBLE);
+            BounceButtons(0);
             gameStarted=1;
 
             BoxAnim(B9);
@@ -638,6 +647,7 @@ public class MainActivity6 extends AppCompatActivity {
 
         if(win==1){
 
+            BounceButtons(1);
             SettingsBorder.setVisibility(View.VISIBLE);
             Settings.setVisibility(View.VISIBLE);
             gameStarted=0;
@@ -727,6 +737,11 @@ public class MainActivity6 extends AppCompatActivity {
             SettingsBorder.setVisibility(View.VISIBLE);
             Settings.setVisibility(View.VISIBLE);
             gameStarted=0;
+            BounceButtons(1);
+
+            resetScoresBtn.setEnabled(true);
+            Settings.setEnabled(true);
+            Back.setEnabled(true);
 
             GameOverAnim();
         }
@@ -939,9 +954,12 @@ public class MainActivity6 extends AppCompatActivity {
         p2arrow.setVisibility(View.INVISIBLE);
     }
 
-    public void BounceButtons(){
-        Animation anim= AnimationUtils.loadAnimation(this,R.anim.bounce);
-        resetScoresBtn.startAnimation(anim);
+    public void BounceButtons(int anim_StartStop){
+        if(anim_StartStop==1) {
+            resetScoresBtn.setVisibility(View.VISIBLE);
+        }else if(anim_StartStop==0){
+            resetScoresBtn.setVisibility(View.INVISIBLE);
+        }
     }
 
     public void BoxAnim(TextView box){

@@ -12,6 +12,30 @@
         android:theme="@style/Theme.TicTacToe"
         tools:targetApi="31">
         <activity
+            android:name=".FourGrid4_dark"
+            android:exported="false" />
+        <activity
+            android:name=".FourGrid4"
+            android:exported="false" />
+        <activity
+            android:name=".FourGrid3_dark"
+            android:exported="false" />
+        <activity
+            android:name=".FourGrid3"
+            android:exported="false" />
+        <activity
+            android:name=".FourGrid2_dark"
+            android:exported="false" />
+        <activity
+            android:name=".FourGrid2"
+            android:exported="false" />
+        <activity
+            android:name=".FourGrid1_dark"
+            android:exported="false" />
+        <activity
+            android:name=".FourGrid1"
+            android:exported="false" />
+        <activity
             android:name=".Darkmode4Activity"
             android:exported="false" />
         <activity

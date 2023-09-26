@@ -40,17 +40,17 @@ public class MainActivity4 extends MainActivity {
     CountDownTimer countdown;
     public static Dialog alert;
     ImageButton BackToHome;
-    RadioGroup XORadioGroup;
-    RadioGroup RestartRadioGroup;
-    RadioButton X,O,Automatic,Manual;
-    public static SharedPreferences sharedPreferences,sharedPreferences1,sharedPreferencesMode;
-    public static SharedPreferences.Editor editor,editor1,editorMode;
+    RadioGroup XORadioGroup,RestartRadioGroup,GridRadioGroup;
+    RadioButton X,O,Automatic,Manual,ThreeByThree,FourByFour;
+    public static SharedPreferences sharedPreferences,sharedPreferences1,sharedPreferencesMode,sharedPreferencesGrid;
+    public static SharedPreferences.Editor editor,editor1,editorMode,editorGrid;
     public static int X_or_O=1;
     public static int XOSP;
     SharedPreferences sharedPreferences2;
     public static SharedPreferences.Editor editor2;
     public static int Auto_Manual=0;
     public static int XOSP2;
+    public static int GridSP;
 
     String P1name,P2name;
     public static int settingsDAA=0;
@@ -183,10 +183,13 @@ public class MainActivity4 extends MainActivity {
             BackToHome = findViewById(R.id.BackToHome);
             XORadioGroup = findViewById(R.id.XORadioGroup);
             RestartRadioGroup = findViewById(R.id.RestartRadioGroup);
+            GridRadioGroup=findViewById(R.id.GridRadioGroup);
             X = findViewById(R.id.X);
             O = findViewById(R.id.O);
             Automatic = findViewById(R.id.Automatic);
             Manual = findViewById(R.id.Manual);
+            ThreeByThree=findViewById(R.id.ThreeByThree);
+            FourByFour=findViewById(R.id.FourByFour);
             Home = findViewById(R.id.Home);
             DAADummy = findViewById(R.id.DAADummy);
             HomeLeft = findViewById(R.id.HomeLeft);
@@ -218,6 +221,18 @@ public class MainActivity4 extends MainActivity {
                     MainActivity5.toSettings_act5 = 0;
                     MainActivity6.toSettings_act6 = 0;
                     MainActivity7.toSettings_act7 = 0;
+                    Darkmode1Activity.toSettings_act3=0;
+                    Darkmode2Activity.toSettings_act5=0;
+                    Darkmode3Activity.toSettings_act6=0;
+                    Darkmode4Activity.toSettings_act7=0;
+                    FourGrid1.toSettings_act3_4grid=0;
+                    FourGrid1_dark.toSettings_act3_4grid_dark=0;
+                    FourGrid2.toSettings_act5_4grid=0;
+                    FourGrid2_dark.toSettings_act5_4grid_dark=0;
+                    FourGrid3.toSettings_act6_4grid=0;
+                    FourGrid3_dark.toSettings_act6_4grid_dark=0;
+                    FourGrid4.toSettings_act7_4grid=0;
+                    FourGrid4_dark.toSettings_act7_4grid_dark=0;
                     Intent intent_home = new Intent(getApplicationContext(), MainActivity.class);
                     startActivity(intent_home);
                 });
@@ -251,50 +266,166 @@ public class MainActivity4 extends MainActivity {
             BackToHome.setOnClickListener(v -> {
 
                 if (MainActivity3.toSettings_act3 == 1 || Darkmode1Activity.toSettings_act3==1) {
-                    if (MainActivity4.X_or_O == 1 && MainActivity4.Auto_Manual == 0) {
-                        GotoActivity3();
-                    } else if (MainActivity4.X_or_O == 0 && MainActivity4.Auto_Manual == 0) {
-                        GotoActivity5();
-                    } else if (MainActivity4.X_or_O == 1 && MainActivity4.Auto_Manual == 1) {
-                        GotoActivity6();
-                    } else if (MainActivity4.X_or_O == 0 && MainActivity4.Auto_Manual == 1) {
-                        GotoActivity7();
-                    }
                     MainActivity3.toSettings_act3 = 0;
+                    Darkmode1Activity.toSettings_act3=0;
+                    if(MainActivity4.X_or_O==1 && MainActivity4.Auto_Manual==0 && MainActivity4.GridSP==1) {
+                        GotoActivity3();
+                    }else if(MainActivity4.X_or_O==0 && MainActivity4.Auto_Manual==0  && MainActivity4.GridSP==1){
+                        GotoActivity5();
+                    }else if(MainActivity4.X_or_O==1 && MainActivity4.Auto_Manual==1  && MainActivity4.GridSP==1){
+                        GotoActivity6();
+                    }else if(MainActivity4.X_or_O==0 && MainActivity4.Auto_Manual==1  && MainActivity4.GridSP==1){
+                        GotoActivity7();
+                    }else if(MainActivity4.X_or_O==1 && MainActivity4.Auto_Manual==0 && MainActivity4.GridSP==0) {
+                        GotoActivity8();
+                    }else if(MainActivity4.X_or_O==0 && MainActivity4.Auto_Manual==0 && MainActivity4.GridSP==0) {
+                        GotoActivity9();
+                    }else if(MainActivity4.X_or_O==1 && MainActivity4.Auto_Manual==1 && MainActivity4.GridSP==0) {
+                        GotoActivity10();
+                    }else if(MainActivity4.X_or_O==0 && MainActivity4.Auto_Manual==1 && MainActivity4.GridSP==0) {
+                        GotoActivity11();
+                    }
                 } else if (MainActivity5.toSettings_act5 == 1 || Darkmode2Activity.toSettings_act5==1) {
-                    if (MainActivity4.X_or_O == 1 && MainActivity4.Auto_Manual == 0) {
-                        GotoActivity3();
-                    } else if (MainActivity4.X_or_O == 0 && MainActivity4.Auto_Manual == 0) {
-                        GotoActivity5();
-                    } else if (MainActivity4.X_or_O == 1 && MainActivity4.Auto_Manual == 1) {
-                        GotoActivity6();
-                    } else if (MainActivity4.X_or_O == 0 && MainActivity4.Auto_Manual == 1) {
-                        GotoActivity7();
-                    }
                     MainActivity5.toSettings_act5 = 0;
+                    Darkmode2Activity.toSettings_act5=0;
+                    if(MainActivity4.X_or_O==1 && MainActivity4.Auto_Manual==0 && MainActivity4.GridSP==1) {
+                        GotoActivity3();
+                    }else if(MainActivity4.X_or_O==0 && MainActivity4.Auto_Manual==0  && MainActivity4.GridSP==1){
+                        GotoActivity5();
+                    }else if(MainActivity4.X_or_O==1 && MainActivity4.Auto_Manual==1  && MainActivity4.GridSP==1){
+                        GotoActivity6();
+                    }else if(MainActivity4.X_or_O==0 && MainActivity4.Auto_Manual==1  && MainActivity4.GridSP==1){
+                        GotoActivity7();
+                    }else if(MainActivity4.X_or_O==1 && MainActivity4.Auto_Manual==0 && MainActivity4.GridSP==0) {
+                        GotoActivity8();
+                    }else if(MainActivity4.X_or_O==0 && MainActivity4.Auto_Manual==0 && MainActivity4.GridSP==0) {
+                        GotoActivity9();
+                    }else if(MainActivity4.X_or_O==1 && MainActivity4.Auto_Manual==1 && MainActivity4.GridSP==0) {
+                        GotoActivity10();
+                    }else if(MainActivity4.X_or_O==0 && MainActivity4.Auto_Manual==1 && MainActivity4.GridSP==0) {
+                        GotoActivity11();
+                    }
                 } else if (MainActivity6.toSettings_act6 == 1 || Darkmode3Activity.toSettings_act6==1) {
-                    if (MainActivity4.X_or_O == 1 && MainActivity4.Auto_Manual == 0) {
-                        GotoActivity3();
-                    } else if (MainActivity4.X_or_O == 0 && MainActivity4.Auto_Manual == 0) {
-                        GotoActivity5();
-                    } else if (MainActivity4.X_or_O == 1 && MainActivity4.Auto_Manual == 1) {
-                        GotoActivity6();
-                    } else if (MainActivity4.X_or_O == 0 && MainActivity4.Auto_Manual == 1) {
-                        GotoActivity7();
-                    }
                     MainActivity6.toSettings_act6 = 0;
-                } else if (MainActivity7.toSettings_act7 == 1 || Darkmode4Activity.toSettings_act7==1) {
-                    if (MainActivity4.X_or_O == 1 && MainActivity4.Auto_Manual == 0) {
+                    Darkmode3Activity.toSettings_act6=0;
+                    if(MainActivity4.X_or_O==1 && MainActivity4.Auto_Manual==0 && MainActivity4.GridSP==1) {
                         GotoActivity3();
-                    } else if (MainActivity4.X_or_O == 0 && MainActivity4.Auto_Manual == 0) {
+                    }else if(MainActivity4.X_or_O==0 && MainActivity4.Auto_Manual==0  && MainActivity4.GridSP==1){
                         GotoActivity5();
-                    } else if (MainActivity4.X_or_O == 1 && MainActivity4.Auto_Manual == 1) {
+                    }else if(MainActivity4.X_or_O==1 && MainActivity4.Auto_Manual==1  && MainActivity4.GridSP==1){
                         GotoActivity6();
-                    } else if (MainActivity4.X_or_O == 0 && MainActivity4.Auto_Manual == 1) {
+                    }else if(MainActivity4.X_or_O==0 && MainActivity4.Auto_Manual==1  && MainActivity4.GridSP==1){
                         GotoActivity7();
+                    }else if(MainActivity4.X_or_O==1 && MainActivity4.Auto_Manual==0 && MainActivity4.GridSP==0) {
+                        GotoActivity8();
+                    }else if(MainActivity4.X_or_O==0 && MainActivity4.Auto_Manual==0 && MainActivity4.GridSP==0) {
+                        GotoActivity9();
+                    }else if(MainActivity4.X_or_O==1 && MainActivity4.Auto_Manual==1 && MainActivity4.GridSP==0) {
+                        GotoActivity10();
+                    }else if(MainActivity4.X_or_O==0 && MainActivity4.Auto_Manual==1 && MainActivity4.GridSP==0) {
+                        GotoActivity11();
                     }
+                } else if (MainActivity7.toSettings_act7 == 1 || Darkmode4Activity.toSettings_act7==1) {
                     MainActivity7.toSettings_act7 = 0;
-                } else {
+                    Darkmode4Activity.toSettings_act7=0;
+                    if(MainActivity4.X_or_O==1 && MainActivity4.Auto_Manual==0 && MainActivity4.GridSP==1) {
+                        GotoActivity3();
+                    }else if(MainActivity4.X_or_O==0 && MainActivity4.Auto_Manual==0  && MainActivity4.GridSP==1){
+                        GotoActivity5();
+                    }else if(MainActivity4.X_or_O==1 && MainActivity4.Auto_Manual==1  && MainActivity4.GridSP==1){
+                        GotoActivity6();
+                    }else if(MainActivity4.X_or_O==0 && MainActivity4.Auto_Manual==1  && MainActivity4.GridSP==1){
+                        GotoActivity7();
+                    }else if(MainActivity4.X_or_O==1 && MainActivity4.Auto_Manual==0 && MainActivity4.GridSP==0) {
+                        GotoActivity8();
+                    }else if(MainActivity4.X_or_O==0 && MainActivity4.Auto_Manual==0 && MainActivity4.GridSP==0) {
+                        GotoActivity9();
+                    }else if(MainActivity4.X_or_O==1 && MainActivity4.Auto_Manual==1 && MainActivity4.GridSP==0) {
+                        GotoActivity10();
+                    }else if(MainActivity4.X_or_O==0 && MainActivity4.Auto_Manual==1 && MainActivity4.GridSP==0) {
+                        GotoActivity11();
+                    }
+                }else if (FourGrid1.toSettings_act3_4grid == 1 || FourGrid1_dark.toSettings_act3_4grid_dark==1) {
+                    FourGrid1.toSettings_act3_4grid = 0;
+                    FourGrid1_dark.toSettings_act3_4grid_dark=0;
+                    if(MainActivity4.X_or_O==1 && MainActivity4.Auto_Manual==0 && MainActivity4.GridSP==1) {
+                        GotoActivity3();
+                    }else if(MainActivity4.X_or_O==0 && MainActivity4.Auto_Manual==0  && MainActivity4.GridSP==1){
+                        GotoActivity5();
+                    }else if(MainActivity4.X_or_O==1 && MainActivity4.Auto_Manual==1  && MainActivity4.GridSP==1){
+                        GotoActivity6();
+                    }else if(MainActivity4.X_or_O==0 && MainActivity4.Auto_Manual==1  && MainActivity4.GridSP==1){
+                        GotoActivity7();
+                    }else if(MainActivity4.X_or_O==1 && MainActivity4.Auto_Manual==0 && MainActivity4.GridSP==0) {
+                        GotoActivity8();
+                    }else if(MainActivity4.X_or_O==0 && MainActivity4.Auto_Manual==0 && MainActivity4.GridSP==0) {
+                        GotoActivity9();
+                    }else if(MainActivity4.X_or_O==1 && MainActivity4.Auto_Manual==1 && MainActivity4.GridSP==0) {
+                        GotoActivity10();
+                    }else if(MainActivity4.X_or_O==0 && MainActivity4.Auto_Manual==1 && MainActivity4.GridSP==0) {
+                        GotoActivity11();
+                    }
+                }else if (FourGrid2.toSettings_act5_4grid == 1  || FourGrid2_dark.toSettings_act5_4grid_dark==1) {
+                    FourGrid2.toSettings_act5_4grid = 0;
+                    FourGrid2_dark.toSettings_act5_4grid_dark=0;
+                    if(MainActivity4.X_or_O==1 && MainActivity4.Auto_Manual==0 && MainActivity4.GridSP==1) {
+                        GotoActivity3();
+                    }else if(MainActivity4.X_or_O==0 && MainActivity4.Auto_Manual==0  && MainActivity4.GridSP==1){
+                        GotoActivity5();
+                    }else if(MainActivity4.X_or_O==1 && MainActivity4.Auto_Manual==1  && MainActivity4.GridSP==1){
+                        GotoActivity6();
+                    }else if(MainActivity4.X_or_O==0 && MainActivity4.Auto_Manual==1  && MainActivity4.GridSP==1){
+                        GotoActivity7();
+                    }else if(MainActivity4.X_or_O==1 && MainActivity4.Auto_Manual==0 && MainActivity4.GridSP==0) {
+                        GotoActivity8();
+                    }else if(MainActivity4.X_or_O==0 && MainActivity4.Auto_Manual==0 && MainActivity4.GridSP==0) {
+                        GotoActivity9();
+                    }else if(MainActivity4.X_or_O==1 && MainActivity4.Auto_Manual==1 && MainActivity4.GridSP==0) {
+                        GotoActivity10();
+                    }else if(MainActivity4.X_or_O==0 && MainActivity4.Auto_Manual==1 && MainActivity4.GridSP==0) {
+                        GotoActivity11();
+                    }
+                }else if (FourGrid3.toSettings_act6_4grid == 1 || FourGrid3_dark.toSettings_act6_4grid_dark==1) {
+                    FourGrid3.toSettings_act6_4grid = 0;
+                    FourGrid3_dark.toSettings_act6_4grid_dark=0;
+                    if(MainActivity4.X_or_O==1 && MainActivity4.Auto_Manual==0 && MainActivity4.GridSP==1) {
+                        GotoActivity3();
+                    }else if(MainActivity4.X_or_O==0 && MainActivity4.Auto_Manual==0  && MainActivity4.GridSP==1){
+                        GotoActivity5();
+                    }else if(MainActivity4.X_or_O==1 && MainActivity4.Auto_Manual==1  && MainActivity4.GridSP==1){
+                        GotoActivity6();
+                    }else if(MainActivity4.X_or_O==0 && MainActivity4.Auto_Manual==1  && MainActivity4.GridSP==1){
+                        GotoActivity7();
+                    }else if(MainActivity4.X_or_O==1 && MainActivity4.Auto_Manual==0 && MainActivity4.GridSP==0) {
+                        GotoActivity8();
+                    }else if(MainActivity4.X_or_O==0 && MainActivity4.Auto_Manual==0 && MainActivity4.GridSP==0) {
+                        GotoActivity9();
+                    }else if(MainActivity4.X_or_O==1 && MainActivity4.Auto_Manual==1 && MainActivity4.GridSP==0) {
+                        GotoActivity10();
+                    }else if(MainActivity4.X_or_O==0 && MainActivity4.Auto_Manual==1 && MainActivity4.GridSP==0) {
+                        GotoActivity11();
+                    }
+                }else if (FourGrid4.toSettings_act7_4grid == 1 || FourGrid4_dark.toSettings_act7_4grid_dark==1) {
+                    FourGrid4.toSettings_act7_4grid = 0;
+                    FourGrid4_dark.toSettings_act7_4grid_dark=0;
+                    if(MainActivity4.X_or_O==1 && MainActivity4.Auto_Manual==0 && MainActivity4.GridSP==1) {
+                        GotoActivity3();
+                    }else if(MainActivity4.X_or_O==0 && MainActivity4.Auto_Manual==0  && MainActivity4.GridSP==1){
+                        GotoActivity5();
+                    }else if(MainActivity4.X_or_O==1 && MainActivity4.Auto_Manual==1  && MainActivity4.GridSP==1){
+                        GotoActivity6();
+                    }else if(MainActivity4.X_or_O==0 && MainActivity4.Auto_Manual==1  && MainActivity4.GridSP==1){
+                        GotoActivity7();
+                    }else if(MainActivity4.X_or_O==1 && MainActivity4.Auto_Manual==0 && MainActivity4.GridSP==0) {
+                        GotoActivity8();
+                    }else if(MainActivity4.X_or_O==0 && MainActivity4.Auto_Manual==0 && MainActivity4.GridSP==0) {
+                        GotoActivity9();
+                    }else if(MainActivity4.X_or_O==1 && MainActivity4.Auto_Manual==1 && MainActivity4.GridSP==0) {
+                        GotoActivity10();
+                    }else if(MainActivity4.X_or_O==0 && MainActivity4.Auto_Manual==1 && MainActivity4.GridSP==0) {
+                        GotoActivity11();
+                    }
+                }else {
                     Intent intent = new Intent(MainActivity4.this, MainActivity.class);
                     startActivity(intent);
                 }
@@ -330,6 +461,23 @@ public class MainActivity4 extends MainActivity {
             RestartRadioGroup.setOnCheckedChangeListener(ReRadGroup);
 
 
+
+
+            sharedPreferencesGrid=getSharedPreferences("Grid",0);
+            GridSP=sharedPreferencesGrid.getInt("GridSP",3);
+            editorGrid=sharedPreferencesGrid.edit();
+
+            if(GridSP==1){
+                ThreeByThree.setChecked(true);
+            }else if(GridSP==0){
+                FourByFour.setChecked(true);
+            }
+
+            GridRadioGroup.setOnCheckedChangeListener(GridRadGroup);
+
+
+
+
             defaultSettings.setOnClickListener(v -> {
 
                 Animation anim = AnimationUtils.loadAnimation(this, R.anim.bounce3);
@@ -340,7 +488,7 @@ public class MainActivity4 extends MainActivity {
 
                 default_pressed = 1;
 
-                if (X.isChecked() && Manual.isChecked() && !DAA.isChecked() && MainActivity4.getMode==0) {
+                if (X.isChecked() && Manual.isChecked() && !DAA.isChecked() && MainActivity4.getMode==0 && ThreeByThree.isChecked()) {
                     Toast.makeText(this, "Settings are same as default", Toast.LENGTH_SHORT).show();
                 } else {
                     Dialog alert2 = new Dialog(this);
@@ -356,6 +504,7 @@ public class MainActivity4 extends MainActivity {
                         Manual.setChecked(true);
                         X.setChecked(true);
                         DAA.setChecked(false);
+                        ThreeByThree.setChecked(true);
                         hand_animation = 0;
                         settingsDAA = 0;
                         handAnimFunc(default_pressed);
@@ -435,55 +584,194 @@ public class MainActivity4 extends MainActivity {
 
 
 
+    RadioGroup.OnCheckedChangeListener GridRadGroup=new RadioGroup.OnCheckedChangeListener() {
+        @SuppressLint("NonConstantResourceId")
+        @Override
+        public void onCheckedChanged(RadioGroup group, int checkedId3) {
+            switch(checkedId3){
+                case R.id.ThreeByThree:
+                    editorGrid.putInt("GridSP",1);
+                    GridSP=1;
+                    break;
+
+                case R.id.FourByFour:
+                    editorGrid.putInt("GridSP",0);
+                    GridSP=0;
+                    break;
+
+                default:
+                    break;
+            }
+            editorGrid.commit();
+        }
+    };
+
+
+
     @Override
     public void onBackPressed() {
-        if(MainActivity3.toSettings_act3==1 || Darkmode1Activity.toSettings_act3==1){
-            MainActivity3.toSettings_act3=0;
-            if(MainActivity4.X_or_O==1 && MainActivity4.Auto_Manual==0) {
+        if (MainActivity3.toSettings_act3 == 1 || Darkmode1Activity.toSettings_act3==1) {
+            MainActivity3.toSettings_act3 = 0;
+            Darkmode1Activity.toSettings_act3=0;
+            if(MainActivity4.X_or_O==1 && MainActivity4.Auto_Manual==0 && MainActivity4.GridSP==1) {
                 GotoActivity3();
-            }else if(MainActivity4.X_or_O==0 && MainActivity4.Auto_Manual==0){
+            }else if(MainActivity4.X_or_O==0 && MainActivity4.Auto_Manual==0  && MainActivity4.GridSP==1){
                 GotoActivity5();
-            }else if(MainActivity4.X_or_O==1 && MainActivity4.Auto_Manual==1){
+            }else if(MainActivity4.X_or_O==1 && MainActivity4.Auto_Manual==1  && MainActivity4.GridSP==1){
                 GotoActivity6();
-            }else if(MainActivity4.X_or_O==0 && MainActivity4.Auto_Manual==1){
+            }else if(MainActivity4.X_or_O==0 && MainActivity4.Auto_Manual==1  && MainActivity4.GridSP==1){
                 GotoActivity7();
+            }else if(MainActivity4.X_or_O==1 && MainActivity4.Auto_Manual==0 && MainActivity4.GridSP==0) {
+                GotoActivity8();
+            }else if(MainActivity4.X_or_O==0 && MainActivity4.Auto_Manual==0 && MainActivity4.GridSP==0) {
+                GotoActivity9();
+            }else if(MainActivity4.X_or_O==1 && MainActivity4.Auto_Manual==1 && MainActivity4.GridSP==0) {
+                GotoActivity10();
+            }else if(MainActivity4.X_or_O==0 && MainActivity4.Auto_Manual==1 && MainActivity4.GridSP==0) {
+                GotoActivity11();
             }
-        } else if (MainActivity5.toSettings_act5==1 || Darkmode2Activity.toSettings_act5==1) {
-            MainActivity5.toSettings_act5=0;
-            if(MainActivity4.X_or_O==1 && MainActivity4.Auto_Manual==0) {
+        } else if (MainActivity5.toSettings_act5 == 1 || Darkmode2Activity.toSettings_act5==1) {
+            MainActivity5.toSettings_act5 = 0;
+            Darkmode2Activity.toSettings_act5=0;
+            if(MainActivity4.X_or_O==1 && MainActivity4.Auto_Manual==0 && MainActivity4.GridSP==1) {
                 GotoActivity3();
-            }else if(MainActivity4.X_or_O==0 && MainActivity4.Auto_Manual==0){
+            }else if(MainActivity4.X_or_O==0 && MainActivity4.Auto_Manual==0  && MainActivity4.GridSP==1){
                 GotoActivity5();
-            }else if(MainActivity4.X_or_O==1 && MainActivity4.Auto_Manual==1){
+            }else if(MainActivity4.X_or_O==1 && MainActivity4.Auto_Manual==1  && MainActivity4.GridSP==1){
                 GotoActivity6();
-            }else if(MainActivity4.X_or_O==0 && MainActivity4.Auto_Manual==1){
+            }else if(MainActivity4.X_or_O==0 && MainActivity4.Auto_Manual==1  && MainActivity4.GridSP==1){
                 GotoActivity7();
+            }else if(MainActivity4.X_or_O==1 && MainActivity4.Auto_Manual==0 && MainActivity4.GridSP==0) {
+                GotoActivity8();
+            }else if(MainActivity4.X_or_O==0 && MainActivity4.Auto_Manual==0 && MainActivity4.GridSP==0) {
+                GotoActivity9();
+            }else if(MainActivity4.X_or_O==1 && MainActivity4.Auto_Manual==1 && MainActivity4.GridSP==0) {
+                GotoActivity10();
+            }else if(MainActivity4.X_or_O==0 && MainActivity4.Auto_Manual==1 && MainActivity4.GridSP==0) {
+                GotoActivity11();
             }
-        }else if (MainActivity6.toSettings_act6==1 || Darkmode3Activity.toSettings_act6==1) {
-            MainActivity6.toSettings_act6=0;
-            if(MainActivity4.X_or_O==1 && MainActivity4.Auto_Manual==0) {
+        } else if (MainActivity6.toSettings_act6 == 1 || Darkmode3Activity.toSettings_act6==1) {
+            MainActivity6.toSettings_act6 = 0;
+            Darkmode3Activity.toSettings_act6=0;
+            if(MainActivity4.X_or_O==1 && MainActivity4.Auto_Manual==0 && MainActivity4.GridSP==1) {
                 GotoActivity3();
-            }else if(MainActivity4.X_or_O==0 && MainActivity4.Auto_Manual==0){
+            }else if(MainActivity4.X_or_O==0 && MainActivity4.Auto_Manual==0  && MainActivity4.GridSP==1){
                 GotoActivity5();
-            }else if(MainActivity4.X_or_O==1 && MainActivity4.Auto_Manual==1){
+            }else if(MainActivity4.X_or_O==1 && MainActivity4.Auto_Manual==1  && MainActivity4.GridSP==1){
                 GotoActivity6();
-            }else if(MainActivity4.X_or_O==0 && MainActivity4.Auto_Manual==1){
+            }else if(MainActivity4.X_or_O==0 && MainActivity4.Auto_Manual==1  && MainActivity4.GridSP==1){
                 GotoActivity7();
+            }else if(MainActivity4.X_or_O==1 && MainActivity4.Auto_Manual==0 && MainActivity4.GridSP==0) {
+                GotoActivity8();
+            }else if(MainActivity4.X_or_O==0 && MainActivity4.Auto_Manual==0 && MainActivity4.GridSP==0) {
+                GotoActivity9();
+            }else if(MainActivity4.X_or_O==1 && MainActivity4.Auto_Manual==1 && MainActivity4.GridSP==0) {
+                GotoActivity10();
+            }else if(MainActivity4.X_or_O==0 && MainActivity4.Auto_Manual==1 && MainActivity4.GridSP==0) {
+                GotoActivity11();
             }
-        }else if (MainActivity7.toSettings_act7==1 || Darkmode4Activity.toSettings_act7==1) {
-            MainActivity7.toSettings_act7=0;
-            if(MainActivity4.X_or_O==1 && MainActivity4.Auto_Manual==0) {
+        } else if (MainActivity7.toSettings_act7 == 1 || Darkmode4Activity.toSettings_act7==1) {
+            MainActivity7.toSettings_act7 = 0;
+            Darkmode4Activity.toSettings_act7=0;
+            if(MainActivity4.X_or_O==1 && MainActivity4.Auto_Manual==0 && MainActivity4.GridSP==1) {
                 GotoActivity3();
-            }else if(MainActivity4.X_or_O==0 && MainActivity4.Auto_Manual==0){
+            }else if(MainActivity4.X_or_O==0 && MainActivity4.Auto_Manual==0  && MainActivity4.GridSP==1){
                 GotoActivity5();
-            }else if(MainActivity4.X_or_O==1 && MainActivity4.Auto_Manual==1){
+            }else if(MainActivity4.X_or_O==1 && MainActivity4.Auto_Manual==1  && MainActivity4.GridSP==1){
                 GotoActivity6();
-            }else if(MainActivity4.X_or_O==0 && MainActivity4.Auto_Manual==1){
+            }else if(MainActivity4.X_or_O==0 && MainActivity4.Auto_Manual==1  && MainActivity4.GridSP==1){
                 GotoActivity7();
+            }else if(MainActivity4.X_or_O==1 && MainActivity4.Auto_Manual==0 && MainActivity4.GridSP==0) {
+                GotoActivity8();
+            }else if(MainActivity4.X_or_O==0 && MainActivity4.Auto_Manual==0 && MainActivity4.GridSP==0) {
+                GotoActivity9();
+            }else if(MainActivity4.X_or_O==1 && MainActivity4.Auto_Manual==1 && MainActivity4.GridSP==0) {
+                GotoActivity10();
+            }else if(MainActivity4.X_or_O==0 && MainActivity4.Auto_Manual==1 && MainActivity4.GridSP==0) {
+                GotoActivity11();
             }
-        }else{
-//            Intent intent=new Intent(MainActivity4.this,MainActivity.class);
-//            startActivity(intent);
+        }else if (FourGrid1.toSettings_act3_4grid == 1 || FourGrid1_dark.toSettings_act3_4grid_dark==1) {
+            FourGrid1.toSettings_act3_4grid = 0;
+            FourGrid1_dark.toSettings_act3_4grid_dark=0;
+            if(MainActivity4.X_or_O==1 && MainActivity4.Auto_Manual==0 && MainActivity4.GridSP==1) {
+                GotoActivity3();
+            }else if(MainActivity4.X_or_O==0 && MainActivity4.Auto_Manual==0  && MainActivity4.GridSP==1){
+                GotoActivity5();
+            }else if(MainActivity4.X_or_O==1 && MainActivity4.Auto_Manual==1  && MainActivity4.GridSP==1){
+                GotoActivity6();
+            }else if(MainActivity4.X_or_O==0 && MainActivity4.Auto_Manual==1  && MainActivity4.GridSP==1){
+                GotoActivity7();
+            }else if(MainActivity4.X_or_O==1 && MainActivity4.Auto_Manual==0 && MainActivity4.GridSP==0) {
+                GotoActivity8();
+            }else if(MainActivity4.X_or_O==0 && MainActivity4.Auto_Manual==0 && MainActivity4.GridSP==0) {
+                GotoActivity9();
+            }else if(MainActivity4.X_or_O==1 && MainActivity4.Auto_Manual==1 && MainActivity4.GridSP==0) {
+                GotoActivity10();
+            }else if(MainActivity4.X_or_O==0 && MainActivity4.Auto_Manual==1 && MainActivity4.GridSP==0) {
+                GotoActivity11();
+            }
+        }else if (FourGrid2.toSettings_act5_4grid == 1  || FourGrid2_dark.toSettings_act5_4grid_dark==1) {
+            FourGrid2.toSettings_act5_4grid = 0;
+            FourGrid2_dark.toSettings_act5_4grid_dark=0;
+            if(MainActivity4.X_or_O==1 && MainActivity4.Auto_Manual==0 && MainActivity4.GridSP==1) {
+                GotoActivity3();
+            }else if(MainActivity4.X_or_O==0 && MainActivity4.Auto_Manual==0  && MainActivity4.GridSP==1){
+                GotoActivity5();
+            }else if(MainActivity4.X_or_O==1 && MainActivity4.Auto_Manual==1  && MainActivity4.GridSP==1){
+                GotoActivity6();
+            }else if(MainActivity4.X_or_O==0 && MainActivity4.Auto_Manual==1  && MainActivity4.GridSP==1){
+                GotoActivity7();
+            }else if(MainActivity4.X_or_O==1 && MainActivity4.Auto_Manual==0 && MainActivity4.GridSP==0) {
+                GotoActivity8();
+            }else if(MainActivity4.X_or_O==0 && MainActivity4.Auto_Manual==0 && MainActivity4.GridSP==0) {
+                GotoActivity9();
+            }else if(MainActivity4.X_or_O==1 && MainActivity4.Auto_Manual==1 && MainActivity4.GridSP==0) {
+                GotoActivity10();
+            }else if(MainActivity4.X_or_O==0 && MainActivity4.Auto_Manual==1 && MainActivity4.GridSP==0) {
+                GotoActivity11();
+            }
+        }else if (FourGrid3.toSettings_act6_4grid == 1 || FourGrid3_dark.toSettings_act6_4grid_dark==1) {
+            FourGrid3.toSettings_act6_4grid = 0;
+            FourGrid3_dark.toSettings_act6_4grid_dark=0;
+            if(MainActivity4.X_or_O==1 && MainActivity4.Auto_Manual==0 && MainActivity4.GridSP==1) {
+                GotoActivity3();
+            }else if(MainActivity4.X_or_O==0 && MainActivity4.Auto_Manual==0  && MainActivity4.GridSP==1){
+                GotoActivity5();
+            }else if(MainActivity4.X_or_O==1 && MainActivity4.Auto_Manual==1  && MainActivity4.GridSP==1){
+                GotoActivity6();
+            }else if(MainActivity4.X_or_O==0 && MainActivity4.Auto_Manual==1  && MainActivity4.GridSP==1){
+                GotoActivity7();
+            }else if(MainActivity4.X_or_O==1 && MainActivity4.Auto_Manual==0 && MainActivity4.GridSP==0) {
+                GotoActivity8();
+            }else if(MainActivity4.X_or_O==0 && MainActivity4.Auto_Manual==0 && MainActivity4.GridSP==0) {
+                GotoActivity9();
+            }else if(MainActivity4.X_or_O==1 && MainActivity4.Auto_Manual==1 && MainActivity4.GridSP==0) {
+                GotoActivity10();
+            }else if(MainActivity4.X_or_O==0 && MainActivity4.Auto_Manual==1 && MainActivity4.GridSP==0) {
+                GotoActivity11();
+            }
+        }else if (FourGrid4.toSettings_act7_4grid == 1  || FourGrid4_dark.toSettings_act7_4grid_dark==1) {
+            FourGrid4.toSettings_act7_4grid = 0;
+            FourGrid4_dark.toSettings_act7_4grid_dark=0;
+            if(MainActivity4.X_or_O==1 && MainActivity4.Auto_Manual==0 && MainActivity4.GridSP==1) {
+                GotoActivity3();
+            }else if(MainActivity4.X_or_O==0 && MainActivity4.Auto_Manual==0  && MainActivity4.GridSP==1){
+                GotoActivity5();
+            }else if(MainActivity4.X_or_O==1 && MainActivity4.Auto_Manual==1  && MainActivity4.GridSP==1){
+                GotoActivity6();
+            }else if(MainActivity4.X_or_O==0 && MainActivity4.Auto_Manual==1  && MainActivity4.GridSP==1){
+                GotoActivity7();
+            }else if(MainActivity4.X_or_O==1 && MainActivity4.Auto_Manual==0 && MainActivity4.GridSP==0) {
+                GotoActivity8();
+            }else if(MainActivity4.X_or_O==0 && MainActivity4.Auto_Manual==0 && MainActivity4.GridSP==0) {
+                GotoActivity9();
+            }else if(MainActivity4.X_or_O==1 && MainActivity4.Auto_Manual==1 && MainActivity4.GridSP==0) {
+                GotoActivity10();
+            }else if(MainActivity4.X_or_O==0 && MainActivity4.Auto_Manual==1 && MainActivity4.GridSP==0) {
+                GotoActivity11();
+            }
+        } else {
+
         }
     }
 
@@ -541,6 +829,61 @@ public class MainActivity4 extends MainActivity {
         startActivity(intent);
     }
 
+    private void GotoActivity8(){
+        FourGrid1_dark.toSettings_act3_4grid_dark=0;
+        Intent intent = new Intent(MainActivity4.this, FourGrid1.class);
+
+        P1name=MainActivity2.P1name;
+        P2name=MainActivity2.P2name;
+
+        intent.putExtra(MainActivity7.P1Name,P1name);
+        intent.putExtra(MainActivity7.P2Name,P2name);
+
+        startActivity(intent);
+    }
+
+    private void GotoActivity9(){
+        FourGrid2_dark.toSettings_act5_4grid_dark=0;
+        FourGrid2.toSettings_act5_4grid=0;
+        Intent intent = new Intent(MainActivity4.this, FourGrid2.class);
+
+        P1name=MainActivity2.P1name;
+        P2name=MainActivity2.P2name;
+
+        intent.putExtra(FourGrid2.P1Name,P1name);
+        intent.putExtra(FourGrid2.P2Name,P2name);
+
+        startActivity(intent);
+    }
+
+    private void GotoActivity10(){
+        FourGrid3_dark.toSettings_act6_4grid_dark=0;
+        FourGrid3.toSettings_act6_4grid=0;
+        Intent intent = new Intent(MainActivity4.this, FourGrid3.class);
+
+        P1name=MainActivity2.P1name;
+        P2name=MainActivity2.P2name;
+
+        intent.putExtra(FourGrid3.P1Name,P1name);
+        intent.putExtra(FourGrid3.P2Name,P2name);
+
+        startActivity(intent);
+    }
+
+    private void GotoActivity11(){
+        FourGrid4_dark.toSettings_act7_4grid_dark=0;
+        FourGrid4.toSettings_act7_4grid=0;
+        Intent intent = new Intent(MainActivity4.this, FourGrid4.class);
+
+        P1name=MainActivity2.P1name;
+        P2name=MainActivity2.P2name;
+
+        intent.putExtra(FourGrid4.P1Name,P1name);
+        intent.putExtra(FourGrid4.P2Name,P2name);
+
+        startActivity(intent);
+    }
+
     public void hand_anim(int anim_StartStop) {
         Animation animation = AnimationUtils.loadAnimation(this, R.anim.hand_anim);
         hand.startAnimation(animation);
@@ -553,6 +896,9 @@ public class MainActivity4 extends MainActivity {
         RestartRadioGroup.setEnabled(false);
         HomeLeft.setEnabled(false);
         ModeSet.setEnabled(false);
+        GridRadioGroup.setEnabled(false);
+        ThreeByThree.setEnabled(false);
+        FourByFour.setEnabled(false);
         if(anim_StartStop==1){
             hand.clearAnimation();
         }
@@ -609,6 +955,9 @@ public class MainActivity4 extends MainActivity {
                             RestartRadioGroup.setEnabled(true);
                             DAA.setEnabled(true);
                             HomeLeft.setEnabled(true);
+                            GridRadioGroup.setEnabled(true);
+                            ThreeByThree.setEnabled(true);
+                            FourByFour.setEnabled(true);
                             DAA.setVisibility(View.VISIBLE);
                             DAADummy.setVisibility(View.INVISIBLE);
                             handAnimTextBack.setVisibility(View.INVISIBLE);

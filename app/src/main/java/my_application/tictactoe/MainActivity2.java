@@ -18,6 +18,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.TextView;
+import android.widget.Toast;
 
 public class MainActivity2 extends MainActivity {
 
@@ -266,28 +267,44 @@ public class MainActivity2 extends MainActivity {
                     public void onFinish() {
                         countdown.cancel();
                         alert.dismiss();
-                        if(MainActivity4.X_or_O==1 && MainActivity4.Auto_Manual==0) {
+                        if(MainActivity4.X_or_O==1 && MainActivity4.Auto_Manual==0 && MainActivity4.GridSP==1) {
                             GotoActivity3();
-                        }else if(MainActivity4.X_or_O==0 && MainActivity4.Auto_Manual==0){
+                        }else if(MainActivity4.X_or_O==0 && MainActivity4.Auto_Manual==0  && MainActivity4.GridSP==1){
                             GotoActivity5();
-                        }else if(MainActivity4.X_or_O==1 && MainActivity4.Auto_Manual==1){
+                        }else if(MainActivity4.X_or_O==1 && MainActivity4.Auto_Manual==1  && MainActivity4.GridSP==1){
                             GotoActivity6();
-                        }else if(MainActivity4.X_or_O==0 && MainActivity4.Auto_Manual==1){
+                        }else if(MainActivity4.X_or_O==0 && MainActivity4.Auto_Manual==1  && MainActivity4.GridSP==1){
                             GotoActivity7();
+                        }else if(MainActivity4.X_or_O==1 && MainActivity4.Auto_Manual==0 && MainActivity4.GridSP==0) {
+                            GotoActivity8();
+                        }else if(MainActivity4.X_or_O==0 && MainActivity4.Auto_Manual==0 && MainActivity4.GridSP==0) {
+                            GotoActivity9();
+                        }else if(MainActivity4.X_or_O==1 && MainActivity4.Auto_Manual==1 && MainActivity4.GridSP==0) {
+                            GotoActivity10();
+                        }else if(MainActivity4.X_or_O==0 && MainActivity4.Auto_Manual==1 && MainActivity4.GridSP==0) {
+                            GotoActivity11();
                         }
                     }
                 }.start();
 
                 continueButton.setOnClickListener(v -> {
                     countdown.cancel();
-                    if(MainActivity4.X_or_O==1 && MainActivity4.Auto_Manual==0) {
+                    if(MainActivity4.X_or_O==1 && MainActivity4.Auto_Manual==0 && MainActivity4.GridSP==1) {
                         GotoActivity3();
-                    }else if(MainActivity4.X_or_O==0 && MainActivity4.Auto_Manual==0){
+                    }else if(MainActivity4.X_or_O==0 && MainActivity4.Auto_Manual==0  && MainActivity4.GridSP==1){
                         GotoActivity5();
-                    }else if(MainActivity4.X_or_O==1 && MainActivity4.Auto_Manual==1){
+                    }else if(MainActivity4.X_or_O==1 && MainActivity4.Auto_Manual==1  && MainActivity4.GridSP==1){
                         GotoActivity6();
-                    }else if(MainActivity4.X_or_O==0 && MainActivity4.Auto_Manual==1){
+                    }else if(MainActivity4.X_or_O==0 && MainActivity4.Auto_Manual==1  && MainActivity4.GridSP==1){
                         GotoActivity7();
+                    }else if(MainActivity4.X_or_O==1 && MainActivity4.Auto_Manual==0 && MainActivity4.GridSP==0) {
+                        GotoActivity8();
+                    }else if(MainActivity4.X_or_O==0 && MainActivity4.Auto_Manual==0 && MainActivity4.GridSP==0) {
+                        GotoActivity9();
+                    }else if(MainActivity4.X_or_O==1 && MainActivity4.Auto_Manual==1 && MainActivity4.GridSP==0) {
+                        GotoActivity10();
+                    }else if(MainActivity4.X_or_O==0 && MainActivity4.Auto_Manual==1 && MainActivity4.GridSP==0) {
+                        GotoActivity11();
                     }
                     alert.dismiss();
                     flag=1;
@@ -529,28 +546,44 @@ public class MainActivity2 extends MainActivity {
                     public void onFinish() {
                         countdown.cancel();
                         alert.dismiss();
-                        if(MainActivity4.X_or_O==1 && MainActivity4.Auto_Manual==0) {
+                        if(MainActivity4.X_or_O==1 && MainActivity4.Auto_Manual==0 && MainActivity4.GridSP==1) {
                             GotoActivity3Dark();
-                        }else if(MainActivity4.X_or_O==0 && MainActivity4.Auto_Manual==0){
+                        }else if(MainActivity4.X_or_O==0 && MainActivity4.Auto_Manual==0  && MainActivity4.GridSP==1){
                             GotoActivity5Dark();
-                        }else if(MainActivity4.X_or_O==1 && MainActivity4.Auto_Manual==1){
+                        }else if(MainActivity4.X_or_O==1 && MainActivity4.Auto_Manual==1  && MainActivity4.GridSP==1){
                             GotoActivity6Dark();
-                        }else if(MainActivity4.X_or_O==0 && MainActivity4.Auto_Manual==1){
+                        }else if(MainActivity4.X_or_O==0 && MainActivity4.Auto_Manual==1  && MainActivity4.GridSP==1){
                             GotoActivity7Dark();
+                        }else if(MainActivity4.X_or_O==1 && MainActivity4.Auto_Manual==0  && MainActivity4.GridSP==0){
+                            GotoActivity8Dark();
+                        }else if(MainActivity4.X_or_O==0 && MainActivity4.Auto_Manual==0 && MainActivity4.GridSP==0) {
+                            GotoActivity9Dark();
+                        }else if(MainActivity4.X_or_O==1 && MainActivity4.Auto_Manual==1 && MainActivity4.GridSP==0) {
+                            GotoActivity10Dark();
+                        }else if(MainActivity4.X_or_O==0 && MainActivity4.Auto_Manual==1 && MainActivity4.GridSP==0) {
+                            GotoActivity11Dark();
                         }
                     }
                 }.start();
 
                 continueButton.setOnClickListener(v -> {
                     countdown.cancel();
-                    if(MainActivity4.X_or_O==1 && MainActivity4.Auto_Manual==0) {
+                    if(MainActivity4.X_or_O==1 && MainActivity4.Auto_Manual==0 && MainActivity4.GridSP==1) {
                         GotoActivity3Dark();
-                    }else if(MainActivity4.X_or_O==0 && MainActivity4.Auto_Manual==0){
+                    }else if(MainActivity4.X_or_O==0 && MainActivity4.Auto_Manual==0  && MainActivity4.GridSP==1){
                         GotoActivity5Dark();
-                    }else if(MainActivity4.X_or_O==1 && MainActivity4.Auto_Manual==1){
+                    }else if(MainActivity4.X_or_O==1 && MainActivity4.Auto_Manual==1  && MainActivity4.GridSP==1){
                         GotoActivity6Dark();
-                    }else if(MainActivity4.X_or_O==0 && MainActivity4.Auto_Manual==1){
+                    }else if(MainActivity4.X_or_O==0 && MainActivity4.Auto_Manual==1  && MainActivity4.GridSP==1){
                         GotoActivity7Dark();
+                    }else if(MainActivity4.X_or_O==1 && MainActivity4.Auto_Manual==0  && MainActivity4.GridSP==0){
+                        GotoActivity8Dark();
+                    }else if(MainActivity4.X_or_O==0 && MainActivity4.Auto_Manual==0 && MainActivity4.GridSP==0) {
+                        GotoActivity9Dark();
+                    }else if(MainActivity4.X_or_O==1 && MainActivity4.Auto_Manual==1 && MainActivity4.GridSP==0) {
+                        GotoActivity10Dark();
+                    }else if(MainActivity4.X_or_O==0 && MainActivity4.Auto_Manual==1 && MainActivity4.GridSP==0) {
+                        GotoActivity11Dark();
                     }
                     alert.dismiss();
                     flag=1;
@@ -679,6 +712,54 @@ public class MainActivity2 extends MainActivity {
         startActivity(intent);
     }
 
+    private void GotoActivity8(){
+        Intent intent = new Intent(MainActivity2.this, FourGrid1.class);
+
+        P1name=player1Name.getText().toString().trim();
+        P2name=player2Name.getText().toString().trim();
+
+        intent.putExtra(FourGrid1.P1Name,P1name);
+        intent.putExtra(FourGrid1.P2Name,P2name);
+
+        startActivity(intent);
+    }
+
+    private void GotoActivity9(){
+        Intent intent = new Intent(MainActivity2.this, FourGrid2.class);
+
+        P1name=player1Name.getText().toString().trim();
+        P2name=player2Name.getText().toString().trim();
+
+        intent.putExtra(FourGrid2.P1Name,P1name);
+        intent.putExtra(FourGrid2.P2Name,P2name);
+
+        startActivity(intent);
+    }
+
+    private void GotoActivity10(){
+        Intent intent = new Intent(MainActivity2.this, FourGrid3.class);
+
+        P1name=player1Name.getText().toString().trim();
+        P2name=player2Name.getText().toString().trim();
+
+        intent.putExtra(FourGrid3.P1Name,P1name);
+        intent.putExtra(FourGrid3.P2Name,P2name);
+
+        startActivity(intent);
+    }
+
+    private void GotoActivity11(){
+        Intent intent = new Intent(MainActivity2.this, FourGrid4.class);
+
+        P1name=player1Name.getText().toString().trim();
+        P2name=player2Name.getText().toString().trim();
+
+        intent.putExtra(FourGrid4.P1Name,P1name);
+        intent.putExtra(FourGrid4.P2Name,P2name);
+
+        startActivity(intent);
+    }
+
     private void GotoActivity3Dark(){
         Intent intent = new Intent(MainActivity2.this, Darkmode1Activity.class);
 
@@ -723,6 +804,54 @@ public class MainActivity2 extends MainActivity {
 
         intent.putExtra(Darkmode4Activity.P1Name,P1name);
         intent.putExtra(Darkmode4Activity.P2Name,P2name);
+
+        startActivity(intent);
+    }
+
+    private void GotoActivity8Dark(){
+        Intent intent = new Intent(MainActivity2.this, FourGrid1_dark.class);
+
+        P1name=player1Name.getText().toString().trim();
+        P2name=player2Name.getText().toString().trim();
+
+        intent.putExtra(FourGrid1_dark.P1Name,P1name);
+        intent.putExtra(FourGrid1_dark.P2Name,P2name);
+
+        startActivity(intent);
+    }
+
+    private void GotoActivity9Dark(){
+        Intent intent = new Intent(MainActivity2.this, FourGrid2_dark.class);
+
+        P1name=player1Name.getText().toString().trim();
+        P2name=player2Name.getText().toString().trim();
+
+        intent.putExtra(FourGrid2_dark.P1Name,P1name);
+        intent.putExtra(FourGrid2_dark.P2Name,P2name);
+
+        startActivity(intent);
+    }
+
+    private void GotoActivity10Dark(){
+        Intent intent = new Intent(MainActivity2.this, FourGrid3_dark.class);
+
+        P1name=player1Name.getText().toString().trim();
+        P2name=player2Name.getText().toString().trim();
+
+        intent.putExtra(FourGrid3_dark.P1Name,P1name);
+        intent.putExtra(FourGrid3_dark.P2Name,P2name);
+
+        startActivity(intent);
+    }
+
+    private void GotoActivity11Dark(){
+        Intent intent = new Intent(MainActivity2.this, FourGrid4_dark.class);
+
+        P1name=player1Name.getText().toString().trim();
+        P2name=player2Name.getText().toString().trim();
+
+        intent.putExtra(FourGrid4_dark.P1Name,P1name);
+        intent.putExtra(FourGrid4_dark.P2Name,P2name);
 
         startActivity(intent);
     }

@@ -21,17 +21,17 @@ import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
-public class MainActivity3 extends AppCompatActivity {
+public class FourGrid2_dark extends AppCompatActivity {
 
     int gameStarted=0;
     TextView GameOver,GameOverBack;
     Dialog alert;
     TextView Settings,SettingsBorder;
     private int win=0;
-    private TextView b1,b2,b3,b4,b5,b6,b7,b8,b9;
-    private TextView B1,B2,B3,B4,B5,B6,B7,B8,B9;
-    private TextView box1,box2,box3,box4,box5,box6,box7,box8,box9;
-    private TextView line1,line2,line3,line4,line5,line6,line7,line8;
+    private TextView b1,b2,b3,b4,b5,b6,b7,b8,b9,b10,b11,b12,b13,b14,b15,b16;
+    private TextView B1,B2,B3,B4,B5,B6,B7,B8,B9,B10,B11,B12,B13,B14,B15,B16;
+    private TextView box1,box2,box3,box4,box5,box6,box7,box8,box9,box10,box11,box12,box13,box14,box15,box16;
+    private TextView line1,line2,line3,line4,line5,line6,line7,line8,line9,line10;
     private TextView playerScores1,playerScores2;
     private TextView winnerDeclaration;
     private TextView P1,P2;
@@ -39,7 +39,7 @@ public class MainActivity3 extends AppCompatActivity {
     private TextView P1ScoreArrow,P2ScoreArrow;
     private int turn=0;
     private int count=0;
-//    private int player1Score=0;
+    //    private int player1Score=0;
 //    private int player2Score=0;
     Button restartBtn;
     Button resetScoresBtn;
@@ -47,17 +47,15 @@ public class MainActivity3 extends AppCompatActivity {
     public static final String P1Name="NAME1";
     public static final String P2Name="NAME2";
     public static String name1,name2;
-    public static int toSettings_act3=0;
+    public static int toSettings_act5_4grid_dark=0;
 
 
     @SuppressLint({"ClickableViewAccessibility", "SetTextI18n", "UseCompatLoadingForDrawables", "MissingInflatedId"})
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main3);
+        setContentView(R.layout.activity_four_grid2_dark);
 
-        //getSupportActionBar().setDisplayOptions(ActionBar.DISPLAY_SHOW_CUSTOM);
-        //getSupportActionBar().setCustomView(R.layout.action_bar_layout);
         if (getSupportActionBar() != null) {
             getSupportActionBar().hide();
         }
@@ -70,10 +68,6 @@ public class MainActivity3 extends AppCompatActivity {
         name1=receiverIntent.getStringExtra(P1Name);
         name2=receiverIntent.getStringExtra(P2Name);
 
-//        MainActivity2.editor=MainActivity2.sharedPreferencesNames.edit();
-//        MainActivity2.editor.putString("Name1",name1);
-//        MainActivity2.editor.putString("Name2",name2);
-//        MainActivity2.editor.commit();
 
 
         box1 = findViewById(R.id.box1);
@@ -85,6 +79,15 @@ public class MainActivity3 extends AppCompatActivity {
         box7 = findViewById(R.id.box7);
         box8 = findViewById(R.id.box8);
         box9 = findViewById(R.id.box9);
+        box10 = findViewById(R.id.box10);
+        box11 = findViewById(R.id.box11);
+        box12 = findViewById(R.id.box12);
+        box13 = findViewById(R.id.box13);
+        box14 = findViewById(R.id.box14);
+        box13 = findViewById(R.id.box13);
+        box14 = findViewById(R.id.box14);
+        box15 = findViewById(R.id.box15);
+        box16 = findViewById(R.id.box16);
 
         line1 = findViewById(R.id.line1);
         line2 = findViewById(R.id.line2);
@@ -94,6 +97,8 @@ public class MainActivity3 extends AppCompatActivity {
         line6 = findViewById(R.id.line6);
         line7 = findViewById(R.id.line7);
         line8 = findViewById(R.id.line8);
+        line9 = findViewById(R.id.line9);
+        line10 = findViewById(R.id.line10);
 
         playerScores1=findViewById(R.id.playerScores1);
         playerScores2=findViewById(R.id.playerScores2);
@@ -115,16 +120,9 @@ public class MainActivity3 extends AppCompatActivity {
 
 
 
-//        RelativeLayout relativeLayout=findViewById(R.id.root_layout);
-//        AnimationDrawable animationDrawable=(AnimationDrawable) relativeLayout.getBackground();
-//        animationDrawable.setEnterFadeDuration(2000);
-//        animationDrawable.setExitFadeDuration(2000);
-//        animationDrawable.start();
-
-
 
         Settings.setOnClickListener(v -> {
-            toSettings_act3=1;
+            toSettings_act5_4grid_dark=1;
             Intent intent_act4=new Intent(getApplicationContext(),MainActivity4.class);
             startActivity(intent_act4);
         });
@@ -171,6 +169,13 @@ public class MainActivity3 extends AppCompatActivity {
         b7=findViewById(R.id.b7);
         b8=findViewById(R.id.b8);
         b9=findViewById(R.id.b9);
+        b10=findViewById(R.id.b10);
+        b11=findViewById(R.id.b11);
+        b12=findViewById(R.id.b12);
+        b13=findViewById(R.id.b13);
+        b14=findViewById(R.id.b14);
+        b15=findViewById(R.id.b15);
+        b16=findViewById(R.id.b16);
 
         B1=findViewById(R.id.B1);
         B2=findViewById(R.id.B2);
@@ -181,25 +186,32 @@ public class MainActivity3 extends AppCompatActivity {
         B7=findViewById(R.id.B7);
         B8=findViewById(R.id.B8);
         B9=findViewById(R.id.B9);
+        B10=findViewById(R.id.B10);
+        B11=findViewById(R.id.B11);
+        B12=findViewById(R.id.B12);
+        B13=findViewById(R.id.B13);
+        B14=findViewById(R.id.B14);
+        B15=findViewById(R.id.B15);
+        B16=findViewById(R.id.B16);
 
         turnDisplay(P1,P2);
         turnDisplayArrow(P1arrow,P2arrow);
 
         if(MainActivity.player1Score > MainActivity.player2Score){
             P1ScoreArrow.setText("▲");
-            P1ScoreArrow.setTextColor(ContextCompat.getColor(this,R.color.light_green));
+            P1ScoreArrow.setTextColor(ContextCompat.getColor(this,R.color.dark_green));
             P2ScoreArrow.setText("▼");
             P2ScoreArrow.setTextColor(ContextCompat.getColor(this,R.color.light_red));
         }else if(MainActivity.player2Score > MainActivity.player1Score){
             P2ScoreArrow.setText("▲");
-            P2ScoreArrow.setTextColor(ContextCompat.getColor(this,R.color.light_green));
+            P2ScoreArrow.setTextColor(ContextCompat.getColor(this,R.color.dark_green));
             P1ScoreArrow.setText("▼");
             P1ScoreArrow.setTextColor(ContextCompat.getColor(this,R.color.light_red));
         }else{
             P1ScoreArrow.setText("-");
-            P1ScoreArrow.setTextColor(Color.WHITE);
+            P1ScoreArrow.setTextColor(ContextCompat.getColor(this,R.color.dark_grey));
             P2ScoreArrow.setText("-");
-            P2ScoreArrow.setTextColor(Color.WHITE);
+            P2ScoreArrow.setTextColor(ContextCompat.getColor(this,R.color.dark_grey));
         }
 
         //playerScores1.setText(name1+" -  0\n\n"+name2+" -  0");
@@ -269,12 +281,12 @@ public class MainActivity3 extends AppCompatActivity {
             if (turn == 0) {
                 turnDisplay(P2,P1);
                 turnDisplayArrow(P2arrow,P1arrow);
-                box1.setText("X");
+                box1.setText("O");
                 turn = 1;
             } else if (turn == 1) {
                 turnDisplay(P1,P2);
                 turnDisplayArrow(P1arrow,P2arrow);
-                box1.setText("O");
+                box1.setText("X");
                 turn = 0;
             }
             count++;
@@ -297,12 +309,12 @@ public class MainActivity3 extends AppCompatActivity {
             if (turn == 0) {
                 turnDisplay(P2,P1);
                 turnDisplayArrow(P2arrow,P1arrow);
-                box2.setText("X");
+                box2.setText("O");
                 turn = 1;
             } else if (turn == 1) {
                 turnDisplay(P1,P2);
                 turnDisplayArrow(P1arrow,P2arrow);
-                box2.setText("O");
+                box2.setText("X");
                 turn = 0;
             }
             count++;
@@ -325,12 +337,12 @@ public class MainActivity3 extends AppCompatActivity {
             if (turn == 0) {
                 turnDisplay(P2,P1);
                 turnDisplayArrow(P2arrow,P1arrow);
-                box3.setText("X");
+                box3.setText("O");
                 turn = 1;
             } else if (turn == 1) {
                 turnDisplay(P1,P2);
                 turnDisplayArrow(P1arrow,P2arrow);
-                box3.setText("O");
+                box3.setText("X");
                 turn = 0;
             }
             count++;
@@ -353,12 +365,12 @@ public class MainActivity3 extends AppCompatActivity {
             if (turn == 0) {
                 turnDisplay(P2,P1);
                 turnDisplayArrow(P2arrow,P1arrow);
-                box4.setText("X");
+                box4.setText("O");
                 turn = 1;
             } else if (turn == 1) {
                 turnDisplay(P1,P2);
                 turnDisplayArrow(P1arrow,P2arrow);
-                box4.setText("O");
+                box4.setText("X");
                 turn = 0;
             }
             count++;
@@ -381,12 +393,12 @@ public class MainActivity3 extends AppCompatActivity {
             if (turn == 0) {
                 turnDisplay(P2,P1);
                 turnDisplayArrow(P2arrow,P1arrow);
-                box5.setText("X");
+                box5.setText("O");
                 turn = 1;
             } else if (turn == 1) {
                 turnDisplay(P1,P2);
                 turnDisplayArrow(P1arrow,P2arrow);
-                box5.setText("O");
+                box5.setText("X");
                 turn = 0;
             }
             count++;
@@ -409,12 +421,12 @@ public class MainActivity3 extends AppCompatActivity {
             if (turn == 0) {
                 turnDisplay(P2,P1);
                 turnDisplayArrow(P2arrow,P1arrow);
-                box6.setText("X");
+                box6.setText("O");
                 turn = 1;
             } else if (turn == 1) {
                 turnDisplay(P1,P2);
                 turnDisplayArrow(P1arrow,P2arrow);
-                box6.setText("O");
+                box6.setText("X");
                 turn = 0;
             }
             count++;
@@ -437,12 +449,12 @@ public class MainActivity3 extends AppCompatActivity {
             if (turn == 0) {
                 turnDisplay(P2,P1);
                 turnDisplayArrow(P2arrow,P1arrow);
-                box7.setText("X");
+                box7.setText("O");
                 turn = 1;
             } else if (turn == 1) {
                 turnDisplay(P1,P2);
                 turnDisplayArrow(P1arrow,P2arrow);
-                box7.setText("O");
+                box7.setText("X");
                 turn = 0;
             }
             count++;
@@ -465,12 +477,12 @@ public class MainActivity3 extends AppCompatActivity {
             if (turn == 0) {
                 turnDisplay(P2,P1);
                 turnDisplayArrow(P2arrow,P1arrow);
-                box8.setText("X");
+                box8.setText("O");
                 turn = 1;
             } else if (turn == 1) {
                 turnDisplay(P1,P2);
                 turnDisplayArrow(P1arrow,P2arrow);
-                box8.setText("O");
+                box8.setText("X");
                 turn = 0;
             }
             count++;
@@ -493,12 +505,12 @@ public class MainActivity3 extends AppCompatActivity {
             if (turn == 0) {
                 turnDisplay(P2,P1);
                 turnDisplayArrow(P2arrow,P1arrow);
-                box9.setText("X");
+                box9.setText("O");
                 turn = 1;
             } else if (turn == 1) {
                 turnDisplay(P1,P2);
                 turnDisplayArrow(P1arrow,P2arrow);
-                box9.setText("O");
+                box9.setText("X");
                 turn = 0;
             }
             count++;
@@ -507,10 +519,206 @@ public class MainActivity3 extends AppCompatActivity {
             box9.setEnabled(false);
             return false;
         });
+
+        box10.setOnTouchListener((v, event) -> {
+
+            Settings.setVisibility(View.INVISIBLE);
+            SettingsBorder.setVisibility(View.INVISIBLE);
+            BounceButtons(0);
+            gameStarted=1;
+
+            BoxAnim(B10);
+            box10.setShowSoftInputOnFocus(false);
+            box10.setVisibility(View.VISIBLE);
+            if (turn == 0) {
+                turnDisplay(P2,P1);
+                turnDisplayArrow(P2arrow,P1arrow);
+                box10.setText("O");
+                turn = 1;
+            } else if (turn == 1) {
+                turnDisplay(P1,P2);
+                turnDisplayArrow(P1arrow,P2arrow);
+                box10.setText("X");
+                turn = 0;
+            }
+            count++;
+            draw();
+            winner();
+            box10.setEnabled(false);
+            return false;
+        });
+
+        box11.setOnTouchListener((v, event) -> {
+
+            Settings.setVisibility(View.INVISIBLE);
+            SettingsBorder.setVisibility(View.INVISIBLE);
+            BounceButtons(0);
+            gameStarted=1;
+
+            BoxAnim(B11);
+            box11.setShowSoftInputOnFocus(false);
+            box11.setVisibility(View.VISIBLE);
+            if (turn == 0) {
+                turnDisplay(P2,P1);
+                turnDisplayArrow(P2arrow,P1arrow);
+                box11.setText("O");
+                turn = 1;
+            } else if (turn == 1) {
+                turnDisplay(P1,P2);
+                turnDisplayArrow(P1arrow,P2arrow);
+                box11.setText("X");
+                turn = 0;
+            }
+            count++;
+            draw();
+            winner();
+            box11.setEnabled(false);
+            return false;
+        });
+
+        box12.setOnTouchListener((v, event) -> {
+
+            Settings.setVisibility(View.INVISIBLE);
+            SettingsBorder.setVisibility(View.INVISIBLE);
+            BounceButtons(0);
+            gameStarted=1;
+
+            BoxAnim(B12);
+            box12.setShowSoftInputOnFocus(false);
+            box12.setVisibility(View.VISIBLE);
+            if (turn == 0) {
+                turnDisplay(P2,P1);
+                turnDisplayArrow(P2arrow,P1arrow);
+                box12.setText("O");
+                turn = 1;
+            } else if (turn == 1) {
+                turnDisplay(P1,P2);
+                turnDisplayArrow(P1arrow,P2arrow);
+                box12.setText("X");
+                turn = 0;
+            }
+            count++;
+            draw();
+            winner();
+            box12.setEnabled(false);
+            return false;
+        });
+
+        box13.setOnTouchListener((v, event) -> {
+
+            Settings.setVisibility(View.INVISIBLE);
+            SettingsBorder.setVisibility(View.INVISIBLE);
+            BounceButtons(0);
+            gameStarted=1;
+
+            BoxAnim(B13);
+            box13.setShowSoftInputOnFocus(false);
+            box13.setVisibility(View.VISIBLE);
+            if (turn == 0) {
+                turnDisplay(P2,P1);
+                turnDisplayArrow(P2arrow,P1arrow);
+                box13.setText("O");
+                turn = 1;
+            } else if (turn == 1) {
+                turnDisplay(P1,P2);
+                turnDisplayArrow(P1arrow,P2arrow);
+                box13.setText("X");
+                turn = 0;
+            }
+            count++;
+            draw();
+            winner();
+            box13.setEnabled(false);
+            return false;
+        });
+
+        box14.setOnTouchListener((v, event) -> {
+
+            Settings.setVisibility(View.INVISIBLE);
+            SettingsBorder.setVisibility(View.INVISIBLE);
+            BounceButtons(0);
+            gameStarted=1;
+
+            BoxAnim(B14);
+            box14.setShowSoftInputOnFocus(false);
+            box14.setVisibility(View.VISIBLE);
+            if (turn == 0) {
+                turnDisplay(P2,P1);
+                turnDisplayArrow(P2arrow,P1arrow);
+                box14.setText("O");
+                turn = 1;
+            } else if (turn == 1) {
+                turnDisplay(P1,P2);
+                turnDisplayArrow(P1arrow,P2arrow);
+                box14.setText("X");
+                turn = 0;
+            }
+            count++;
+            draw();
+            winner();
+            box14.setEnabled(false);
+            return false;
+        });
+
+        box15.setOnTouchListener((v, event) -> {
+
+            Settings.setVisibility(View.INVISIBLE);
+            SettingsBorder.setVisibility(View.INVISIBLE);
+            BounceButtons(0);
+            gameStarted=1;
+
+            BoxAnim(B15);
+            box15.setShowSoftInputOnFocus(false);
+            box15.setVisibility(View.VISIBLE);
+            if (turn == 0) {
+                turnDisplay(P2,P1);
+                turnDisplayArrow(P2arrow,P1arrow);
+                box15.setText("O");
+                turn = 1;
+            } else if (turn == 1) {
+                turnDisplay(P1,P2);
+                turnDisplayArrow(P1arrow,P2arrow);
+                box15.setText("X");
+                turn = 0;
+            }
+            count++;
+            draw();
+            winner();
+            box15.setEnabled(false);
+            return false;
+        });
+
+        box16.setOnTouchListener((v, event) -> {
+
+            Settings.setVisibility(View.INVISIBLE);
+            SettingsBorder.setVisibility(View.INVISIBLE);
+            BounceButtons(0);
+            gameStarted=1;
+
+            BoxAnim(B16);
+            box16.setShowSoftInputOnFocus(false);
+            box16.setVisibility(View.VISIBLE);
+            if (turn == 0) {
+                turnDisplay(P2,P1);
+                turnDisplayArrow(P2arrow,P1arrow);
+                box16.setText("O");
+                turn = 1;
+            } else if (turn == 1) {
+                turnDisplay(P1,P2);
+                turnDisplayArrow(P1arrow,P2arrow);
+                box16.setText("X");
+                turn = 0;
+            }
+            count++;
+            draw();
+            winner();
+            box16.setEnabled(false);
+            return false;
+        });
     }
 
     private void winner(){
-        if(box1.getText().toString().equals("X") && box5.getText().toString().equals("X") && box9.getText().toString().equals("X")){
+        if(box1.getText().toString().equals("X") && box5.getText().toString().equals("X") && box9.getText().toString().equals("X") && box13.getText().toString().equals("X")){
             line1.setVisibility(View.VISIBLE);
             disable();
             win=1;
@@ -518,17 +726,19 @@ public class MainActivity3 extends AppCompatActivity {
             b1.setVisibility(View.VISIBLE);
             b5.setVisibility(View.VISIBLE);
             b9.setVisibility(View.VISIBLE);
+            b13.setVisibility(View.VISIBLE);
 
-        }else if(box3.getText().toString().equals("X") && box5.getText().toString().equals("X") && box7.getText().toString().equals("X")){
+        }else if(box16.getText().toString().equals("X") && box6.getText().toString().equals("X") && box8.getText().toString().equals("X") && box10.getText().toString().equals("X")){
             line2.setVisibility(View.VISIBLE);
             disable();
             win=1;
             winnerPlayer();
-            b3.setVisibility(View.VISIBLE);
-            b5.setVisibility(View.VISIBLE);
-            b7.setVisibility(View.VISIBLE);
+            b16.setVisibility(View.VISIBLE);
+            b6.setVisibility(View.VISIBLE);
+            b8.setVisibility(View.VISIBLE);
+            b10.setVisibility(View.VISIBLE);
 
-        }else if(box1.getText().toString().equals("X") && box2.getText().toString().equals("X") && box3.getText().toString().equals("X")){
+        }else if(box1.getText().toString().equals("X") && box2.getText().toString().equals("X") && box3.getText().toString().equals("X") && box16.getText().toString().equals("X")){
             line3.setVisibility(View.VISIBLE);
             disable();
             win=1;
@@ -536,8 +746,9 @@ public class MainActivity3 extends AppCompatActivity {
             b1.setVisibility(View.VISIBLE);
             b2.setVisibility(View.VISIBLE);
             b3.setVisibility(View.VISIBLE);
+            b16.setVisibility(View.VISIBLE);
 
-        }else if(box4.getText().toString().equals("X") && box5.getText().toString().equals("X") && box6.getText().toString().equals("X")){
+        }else if(box4.getText().toString().equals("X") && box5.getText().toString().equals("X") && box6.getText().toString().equals("X") && box15.getText().toString().equals("X")){
             line4.setVisibility(View.VISIBLE);
             disable();
             win=1;
@@ -545,8 +756,9 @@ public class MainActivity3 extends AppCompatActivity {
             b4.setVisibility(View.VISIBLE);
             b5.setVisibility(View.VISIBLE);
             b6.setVisibility(View.VISIBLE);
+            b15.setVisibility(View.VISIBLE);
 
-        }else if(box7.getText().toString().equals("X") && box8.getText().toString().equals("X") && box9.getText().toString().equals("X")){
+        }else if(box7.getText().toString().equals("X") && box8.getText().toString().equals("X") && box9.getText().toString().equals("X") && box14.getText().toString().equals("X")){
             line5.setVisibility(View.VISIBLE);
             disable();
             win=1;
@@ -554,8 +766,19 @@ public class MainActivity3 extends AppCompatActivity {
             b7.setVisibility(View.VISIBLE);
             b8.setVisibility(View.VISIBLE);
             b9.setVisibility(View.VISIBLE);
+            b14.setVisibility(View.VISIBLE);
 
-        }else if(box1.getText().toString().equals("X") && box4.getText().toString().equals("X") && box7.getText().toString().equals("X")){
+        }else if(box10.getText().toString().equals("X") && box11.getText().toString().equals("X") && box12.getText().toString().equals("X") && box13.getText().toString().equals("X")){
+            line8.setVisibility(View.VISIBLE);
+            disable();
+            win=1;
+            winnerPlayer();
+            b10.setVisibility(View.VISIBLE);
+            b11.setVisibility(View.VISIBLE);
+            b12.setVisibility(View.VISIBLE);
+            b13.setVisibility(View.VISIBLE);
+
+        }else if(box1.getText().toString().equals("X") && box4.getText().toString().equals("X") && box7.getText().toString().equals("X") && box10.getText().toString().equals("X")){
             line6.setVisibility(View.VISIBLE);
             disable();
             win=1;
@@ -563,8 +786,9 @@ public class MainActivity3 extends AppCompatActivity {
             b1.setVisibility(View.VISIBLE);
             b4.setVisibility(View.VISIBLE);
             b7.setVisibility(View.VISIBLE);
+            b10.setVisibility(View.VISIBLE);
 
-        }else if(box2.getText().toString().equals("X") && box5.getText().toString().equals("X") && box8.getText().toString().equals("X")){
+        }else if(box2.getText().toString().equals("X") && box5.getText().toString().equals("X") && box8.getText().toString().equals("X") && box11.getText().toString().equals("X")){
             line7.setVisibility(View.VISIBLE);
             disable();
             win=1;
@@ -572,17 +796,29 @@ public class MainActivity3 extends AppCompatActivity {
             b2.setVisibility(View.VISIBLE);
             b5.setVisibility(View.VISIBLE);
             b8.setVisibility(View.VISIBLE);
+            b11.setVisibility(View.VISIBLE);
 
-        }else if(box3.getText().toString().equals("X") && box6.getText().toString().equals("X") && box9.getText().toString().equals("X")){
-            line8.setVisibility(View.VISIBLE);
+        }else if(box3.getText().toString().equals("X") && box6.getText().toString().equals("X") && box9.getText().toString().equals("X") && box12.getText().toString().equals("X")){
+            line9.setVisibility(View.VISIBLE);
             disable();
             win=1;
             winnerPlayer();
             b3.setVisibility(View.VISIBLE);
             b6.setVisibility(View.VISIBLE);
             b9.setVisibility(View.VISIBLE);
+            b12.setVisibility(View.VISIBLE);
 
-        }else if(box1.getText().toString().equals("O") && box5.getText().toString().equals("O") && box9.getText().toString().equals("O")){
+        }else if(box16.getText().toString().equals("X") && box15.getText().toString().equals("X") && box14.getText().toString().equals("X") && box13.getText().toString().equals("X")){
+            line10.setVisibility(View.VISIBLE);
+            disable();
+            win=1;
+            winnerPlayer();
+            b16.setVisibility(View.VISIBLE);
+            b15.setVisibility(View.VISIBLE);
+            b14.setVisibility(View.VISIBLE);
+            b13.setVisibility(View.VISIBLE);
+
+        }else if(box1.getText().toString().equals("O") && box5.getText().toString().equals("O") && box9.getText().toString().equals("O") && box13.getText().toString().equals("O")){
             line1.setVisibility(View.VISIBLE);
             disable();
             win=1;
@@ -590,17 +826,19 @@ public class MainActivity3 extends AppCompatActivity {
             b1.setVisibility(View.VISIBLE);
             b5.setVisibility(View.VISIBLE);
             b9.setVisibility(View.VISIBLE);
+            b13.setVisibility(View.VISIBLE);
 
-        }else if(box3.getText().toString().equals("O") && box5.getText().toString().equals("O") && box7.getText().toString().equals("O")){
+        }else if(box16.getText().toString().equals("O") && box6.getText().toString().equals("O") && box8.getText().toString().equals("O") && box10.getText().toString().equals("O")){
             line2.setVisibility(View.VISIBLE);
             disable();
             win=1;
             winnerPlayer();
-            b3.setVisibility(View.VISIBLE);
-            b5.setVisibility(View.VISIBLE);
-            b7.setVisibility(View.VISIBLE);
+            b16.setVisibility(View.VISIBLE);
+            b6.setVisibility(View.VISIBLE);
+            b8.setVisibility(View.VISIBLE);
+            b10.setVisibility(View.VISIBLE);
 
-        }else if(box1.getText().toString().equals("O") && box2.getText().toString().equals("O") && box3.getText().toString().equals("O")){
+        }else if(box1.getText().toString().equals("O") && box2.getText().toString().equals("O") && box3.getText().toString().equals("O") && box16.getText().toString().equals("O")){
             line3.setVisibility(View.VISIBLE);
             disable();
             win=1;
@@ -608,8 +846,9 @@ public class MainActivity3 extends AppCompatActivity {
             b1.setVisibility(View.VISIBLE);
             b2.setVisibility(View.VISIBLE);
             b3.setVisibility(View.VISIBLE);
+            b16.setVisibility(View.VISIBLE);
 
-        }else if(box4.getText().toString().equals("O") && box5.getText().toString().equals("O") && box6.getText().toString().equals("O")){
+        }else if(box4.getText().toString().equals("O") && box5.getText().toString().equals("O") && box6.getText().toString().equals("O") && box15.getText().toString().equals("O")){
             line4.setVisibility(View.VISIBLE);
             disable();
             win=1;
@@ -617,8 +856,9 @@ public class MainActivity3 extends AppCompatActivity {
             b4.setVisibility(View.VISIBLE);
             b5.setVisibility(View.VISIBLE);
             b6.setVisibility(View.VISIBLE);
+            b15.setVisibility(View.VISIBLE);
 
-        }else if(box7.getText().toString().equals("O") && box8.getText().toString().equals("O") && box9.getText().toString().equals("O")){
+        }else if(box7.getText().toString().equals("O") && box8.getText().toString().equals("O") && box9.getText().toString().equals("O") && box14.getText().toString().equals("O")){
             line5.setVisibility(View.VISIBLE);
             disable();
             win=1;
@@ -626,8 +866,19 @@ public class MainActivity3 extends AppCompatActivity {
             b7.setVisibility(View.VISIBLE);
             b8.setVisibility(View.VISIBLE);
             b9.setVisibility(View.VISIBLE);
+            b14.setVisibility(View.VISIBLE);
 
-        }else if(box1.getText().toString().equals("O") && box4.getText().toString().equals("O") && box7.getText().toString().equals("O")){
+        }else if(box10.getText().toString().equals("O") && box11.getText().toString().equals("O") && box12.getText().toString().equals("O") && box13.getText().toString().equals("O")){
+            line8.setVisibility(View.VISIBLE);
+            disable();
+            win=1;
+            winnerPlayer();
+            b10.setVisibility(View.VISIBLE);
+            b11.setVisibility(View.VISIBLE);
+            b12.setVisibility(View.VISIBLE);
+            b13.setVisibility(View.VISIBLE);
+
+        }else if(box1.getText().toString().equals("O") && box4.getText().toString().equals("O") && box7.getText().toString().equals("O") && box10.getText().toString().equals("O")){
             line6.setVisibility(View.VISIBLE);
             disable();
             win=1;
@@ -635,8 +886,9 @@ public class MainActivity3 extends AppCompatActivity {
             b1.setVisibility(View.VISIBLE);
             b4.setVisibility(View.VISIBLE);
             b7.setVisibility(View.VISIBLE);
+            b10.setVisibility(View.VISIBLE);
 
-        }else if(box2.getText().toString().equals("O") && box5.getText().toString().equals("O") && box8.getText().toString().equals("O")){
+        }else if(box2.getText().toString().equals("O") && box5.getText().toString().equals("O") && box8.getText().toString().equals("O") && box11.getText().toString().equals("O")){
             line7.setVisibility(View.VISIBLE);
             disable();
             win=1;
@@ -644,16 +896,26 @@ public class MainActivity3 extends AppCompatActivity {
             b2.setVisibility(View.VISIBLE);
             b5.setVisibility(View.VISIBLE);
             b8.setVisibility(View.VISIBLE);
+            b11.setVisibility(View.VISIBLE);
 
-        }else if(box3.getText().toString().equals("O") && box6.getText().toString().equals("O") && box9.getText().toString().equals("O")){
-            line8.setVisibility(View.VISIBLE);
+        }else if(box3.getText().toString().equals("O") && box6.getText().toString().equals("O") && box9.getText().toString().equals("O") && box12.getText().toString().equals("O")){
+            line9.setVisibility(View.VISIBLE);
             disable();
             win=1;
             winnerPlayer();
             b3.setVisibility(View.VISIBLE);
             b6.setVisibility(View.VISIBLE);
             b9.setVisibility(View.VISIBLE);
-
+            b12.setVisibility(View.VISIBLE);
+        }else if(box16.getText().toString().equals("O") && box15.getText().toString().equals("O") && box14.getText().toString().equals("O") && box13.getText().toString().equals("O")){
+            line10.setVisibility(View.VISIBLE);
+            disable();
+            win=1;
+            winnerPlayer();
+            b16.setVisibility(View.VISIBLE);
+            b15.setVisibility(View.VISIBLE);
+            b14.setVisibility(View.VISIBLE);
+            b13.setVisibility(View.VISIBLE);
         }
 
         if(win==1){
@@ -672,19 +934,19 @@ public class MainActivity3 extends AppCompatActivity {
 
             if(MainActivity.player1Score > MainActivity.player2Score){
                 P1ScoreArrow.setText("▲");
-                P1ScoreArrow.setTextColor(ContextCompat.getColor(this,R.color.light_green));
+                P1ScoreArrow.setTextColor(ContextCompat.getColor(this,R.color.dark_green));
                 P2ScoreArrow.setText("▼");
                 P2ScoreArrow.setTextColor(ContextCompat.getColor(this,R.color.light_red));
             }else if(MainActivity.player2Score > MainActivity.player1Score){
                 P2ScoreArrow.setText("▲");
-                P2ScoreArrow.setTextColor(ContextCompat.getColor(this,R.color.light_green));
+                P2ScoreArrow.setTextColor(ContextCompat.getColor(this,R.color.dark_green));
                 P1ScoreArrow.setText("▼");
                 P1ScoreArrow.setTextColor(ContextCompat.getColor(this,R.color.light_red));
             }else{
                 P1ScoreArrow.setText("-");
-                P1ScoreArrow.setTextColor(Color.WHITE);
+                P1ScoreArrow.setTextColor(ContextCompat.getColor(this,R.color.dark_grey));
                 P2ScoreArrow.setText("-");
-                P2ScoreArrow.setTextColor(Color.WHITE);
+                P2ScoreArrow.setTextColor(ContextCompat.getColor(this,R.color.dark_grey));
             }
         }
     }
@@ -712,12 +974,6 @@ public class MainActivity3 extends AppCompatActivity {
                 resetScoresBtn.setEnabled(true);
                 Settings.setEnabled(true);
                 Back.setEnabled(true);
-//                    if(turn==1 && win==1) {
-//                        WinnerPlayer.setText("Player 1\nwins!");
-//                    }else if(turn==0 && win==1){
-//                        WinnerPlayer.setText("Player 2\nwins!");
-//                    }
-//                    WinnerPlayer.setVisibility(View.VISIBLE);
             }
 
             @Override
@@ -737,12 +993,19 @@ public class MainActivity3 extends AppCompatActivity {
         box7.setEnabled(false);
         box8.setEnabled(false);
         box9.setEnabled(false);
+        box10.setEnabled(false);
+        box11.setEnabled(false);
+        box12.setEnabled(false);
+        box13.setEnabled(false);
+        box14.setEnabled(false);
+        box15.setEnabled(false);
+        box16.setEnabled(false);
     }
 
     @SuppressLint("SetTextI18n")
     private void draw(){
 
-        if (count == 9 && win==0) {
+        if (count == 16 && win==0) {
             winnerDeclaration.setText(" DRAW ");
             P1.setVisibility(View.INVISIBLE);
             P2.setVisibility(View.INVISIBLE);
@@ -762,7 +1025,7 @@ public class MainActivity3 extends AppCompatActivity {
     @SuppressLint("SetTextI18n")
     private void winnerPlayer(){
         if(turn==1 && win==1){
-            winnerDeclaration.setText(" "+name1+" (X) ");
+            winnerDeclaration.setText(" "+name1+" (O) ");
             MainActivity.player1Score++;
             playerScores1.setText(name1+" -  "+MainActivity.player1Score);
             playerScores2.setText(name2+" -  "+MainActivity.player2Score);
@@ -774,12 +1037,8 @@ public class MainActivity3 extends AppCompatActivity {
             MainActivity.editor.putString("Name",name1);
             MainActivity.editor.commit();
 
-//            MainActivity.home_pressed=1;
-//            Intent intent1 = new Intent(MainActivity3.this,MainActivity.class);
-//            startActivity(intent1);
-
         }else if(turn==0 && win==1){
-            winnerDeclaration.setText(" "+name2+" (O) ");
+            winnerDeclaration.setText(" "+name2+" (X) ");
             MainActivity.player2Score++;
             playerScores1.setText(name1+" -  "+MainActivity.player1Score);
             playerScores2.setText(name2+" -  "+MainActivity.player2Score);
@@ -791,17 +1050,6 @@ public class MainActivity3 extends AppCompatActivity {
             MainActivity.editor.putString("Name",name2);
             MainActivity.editor.commit();
         }
-
-//        if(MainActivity8.score>MainActivity8.high_score){
-//            MainActivity8.highScore.setText(MainActivity8.score+"");
-//
-//            MainActivity8.editor.putInt("HighScore",MainActivity8.score);
-//            MainActivity8.editor.putString("Name",MainActivity8.winnerName);
-//            MainActivity8.editor.commit();
-//        }else {
-//            MainActivity8.playerName.setText(MainActivity8.name+"");
-//            MainActivity8.highScore.setText(MainActivity8.high_score+"");
-//        }
     }
 
     private void restartGame(){
@@ -814,8 +1062,8 @@ public class MainActivity3 extends AppCompatActivity {
         Settings.setVisibility(View.VISIBLE);
         P1arrow.setVisibility(View.INVISIBLE);
         P2arrow.setVisibility(View.INVISIBLE);
-        P1arrow.setText("✖");
-        P2arrow.setText("⬤");
+        P1arrow.setText("⬤");
+        P2arrow.setText("✖");
 
         turnDisplay(P1,P2);
         turnDisplayArrow(P1arrow,P2arrow);
@@ -831,6 +1079,13 @@ public class MainActivity3 extends AppCompatActivity {
         b7.setVisibility(View.INVISIBLE);
         b8.setVisibility(View.INVISIBLE);
         b9.setVisibility(View.INVISIBLE);
+        b10.setVisibility(View.INVISIBLE);
+        b11.setVisibility(View.INVISIBLE);
+        b12.setVisibility(View.INVISIBLE);
+        b13.setVisibility(View.INVISIBLE);
+        b14.setVisibility(View.INVISIBLE);
+        b15.setVisibility(View.INVISIBLE);
+        b16.setVisibility(View.INVISIBLE);
 
         line1.setVisibility(View.INVISIBLE);
         line2.setVisibility(View.INVISIBLE);
@@ -840,6 +1095,8 @@ public class MainActivity3 extends AppCompatActivity {
         line6.setVisibility(View.INVISIBLE);
         line7.setVisibility(View.INVISIBLE);
         line8.setVisibility(View.INVISIBLE);
+        line9.setVisibility(View.INVISIBLE);
+        line10.setVisibility(View.INVISIBLE);
 
         box1.setEnabled(true);
         box1.setText(null);
@@ -867,6 +1124,27 @@ public class MainActivity3 extends AppCompatActivity {
 
         box9.setEnabled(true);
         box9.setText(null);
+
+        box10.setEnabled(true);
+        box10.setText(null);
+
+        box11.setEnabled(true);
+        box11.setText(null);
+
+        box12.setEnabled(true);
+        box12.setText(null);
+
+        box13.setEnabled(true);
+        box13.setText(null);
+
+        box14.setEnabled(true);
+        box14.setText(null);
+
+        box15.setEnabled(true);
+        box15.setText(null);
+
+        box16.setEnabled(true);
+        box16.setText(null);
     }
 
     @SuppressLint("SetTextI18n")
@@ -893,14 +1171,10 @@ public class MainActivity3 extends AppCompatActivity {
     }
 
     public void BounceButtons(int anim_StartStop){
-//        Animation anim= AnimationUtils.loadAnimation(this,R.anim.bounce);
         if(anim_StartStop==1) {
             restartBtn.setVisibility(View.VISIBLE);
             resetScoresBtn.setVisibility(View.VISIBLE);
-//            restartBtn.startAnimation(anim);
-//            resetScoresBtn.startAnimation(anim);
         }else if(anim_StartStop==0){
-//            anim.cancel();
             restartBtn.setVisibility(View.INVISIBLE);
             resetScoresBtn.setVisibility(View.INVISIBLE);
         }
@@ -913,64 +1187,6 @@ public class MainActivity3 extends AppCompatActivity {
 
     @Override
     public void onBackPressed() {
-//        Intent intent1 = new Intent(MainActivity3.this,MainActivity2.class);
-//        startActivity(intent1);
+
     }
 }
-
-//    @Override
-//    public void onBackPressed(){
-//        if(pressedTime+2000>System.currentTimeMillis()){
-//            super.onBackPressed();
-//            finish();
-//        }else {
-//            Toast.makeText(getBaseContext(), "Press back again to go to home page", Toast.LENGTH_SHORT).show();
-//        }
-//        pressedTime=System.currentTimeMillis();
-//    }
-
-//    private void closeKeyboard(){
-//        View view=this.getCurrentFocus();
-//        if(view!=null){
-//            InputMethodManager imm = (InputMethodManager) getSystemService(Context.INPUT_METHOD_SERVICE);
-//            imm.hideSoftInputFromWindow(view.getWindowToken(), 0);
-//        }
-//    }
-
-
-//    private void blinkingText(TextView txt){
-//        final Handler handler = new Handler();
-//        new Thread(new Runnable() {
-//            @Override
-//            public void run() {
-//                try {
-//                    Thread.sleep(600);
-//                }catch (Exception e){
-//
-//                }
-//                handler.post(new Runnable() {
-//                    @Override
-//                    public void run() {
-//                        if(txt.getVisibility()==View.VISIBLE) {
-//                            txt.setVisibility(View.INVISIBLE);
-//                        }else{
-//                            txt.setVisibility(View.VISIBLE);
-//                        }
-//                        blinkingText(txt);
-//                    }
-//                });
-//            }
-//        }).start();
-//    }
-
-
-
-//<TextView
-//    android:layout_width="wrap_content"
-//            android:layout_height="wrap_content"
-//            android:text="By\nSanjana S.Joshi"
-//            android:textAlignment="center"
-//            android:layout_alignParentBottom="true"
-//            android:textStyle="italic"
-//            android:layout_centerHorizontal="true"
-//            android:layout_marginBottom="10dp"/>
