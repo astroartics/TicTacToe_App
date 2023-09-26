@@ -38,6 +38,7 @@ public class DarkSettings extends MainActivity {
     RadioButton X,O,Automatic,Manual,ThreeByThree,FourByFour;
     SharedPreferences sharedPreferences2,sharedPreferencesGrid;
 
+    int threeORfourGrid;
     String P1name,P2name;
     TextView checkboxOutline;
     TextView totalOutline,totalOutlineBackBtn;
@@ -443,12 +444,14 @@ public class DarkSettings extends MainActivity {
 
 
             sharedPreferencesGrid=getSharedPreferences("Grid",0);
-            MainActivity4.GridSP=sharedPreferencesGrid.getInt("GridSP",3);
+            threeORfourGrid=sharedPreferencesGrid.getInt("GridSP",3);
             MainActivity4.editorGrid=sharedPreferencesGrid.edit();
 
-            if(MainActivity4.GridSP==1){
+            if(threeORfourGrid==1){
+                MainActivity4.GridSP=1;
                 ThreeByThree.setChecked(true);
-            }else if(MainActivity4.GridSP==0){
+            }else if(threeORfourGrid==0){
+                MainActivity4.GridSP=0;
                 FourByFour.setChecked(true);
             }
 
@@ -483,6 +486,7 @@ public class DarkSettings extends MainActivity {
                         Manual.setChecked(true);
                         X.setChecked(true);
                         DAA.setChecked(false);
+                        ThreeByThree.setChecked(true);
                         MainActivity4.hand_animation = 0;
                         MainActivity4.settingsDAA = 0;
                         handAnimFunc(MainActivity4.default_pressed);

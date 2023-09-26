@@ -50,7 +50,8 @@ public class MainActivity4 extends MainActivity {
     public static SharedPreferences.Editor editor2;
     public static int Auto_Manual=0;
     public static int XOSP2;
-    public static int GridSP;
+    public static int GridSP=1;
+    int threeORfourGrid;
 
     String P1name,P2name;
     public static int settingsDAA=0;
@@ -464,12 +465,14 @@ public class MainActivity4 extends MainActivity {
 
 
             sharedPreferencesGrid=getSharedPreferences("Grid",0);
-            GridSP=sharedPreferencesGrid.getInt("GridSP",3);
+            threeORfourGrid=sharedPreferencesGrid.getInt("GridSP",3);
             editorGrid=sharedPreferencesGrid.edit();
 
-            if(GridSP==1){
+            if(threeORfourGrid==1){
+                GridSP=1;
                 ThreeByThree.setChecked(true);
-            }else if(GridSP==0){
+            }else if(threeORfourGrid==0){
+                GridSP=0;
                 FourByFour.setChecked(true);
             }
 
