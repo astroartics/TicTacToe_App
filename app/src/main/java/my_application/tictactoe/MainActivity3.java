@@ -17,9 +17,13 @@ import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
 import android.widget.Button;
 import android.widget.ImageButton;
+import android.widget.ImageView;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import java.text.SimpleDateFormat;
+import java.util.Date;
 
 public class MainActivity3 extends AppCompatActivity {
 
@@ -74,6 +78,26 @@ public class MainActivity3 extends AppCompatActivity {
 //        MainActivity2.editor.putString("Name1",name1);
 //        MainActivity2.editor.putString("Name2",name2);
 //        MainActivity2.editor.commit();
+
+
+        String date = new SimpleDateFormat("dd MM yyyy").format(new Date());
+        String[] dateArr=date.split(" ",3);
+        if(dateArr[1].equals("11")){
+            ImageView diyaBody=findViewById(R.id.DiyaBody);
+            ImageView diyaLight=findViewById(R.id.DiyaLight);
+            ImageView diyaBody2=findViewById(R.id.DiyaBody2);
+            ImageView diyaLight2=findViewById(R.id.DiyaLight2);
+
+            diyaBody.setVisibility(View.VISIBLE);
+            diyaLight.setVisibility(View.VISIBLE);
+            diyaBody2.setVisibility(View.VISIBLE);
+            diyaLight2.setVisibility(View.VISIBLE);
+
+            Animation animation=AnimationUtils.loadAnimation(this,R.anim.diya_light_anim);
+            diyaLight.startAnimation(animation);
+            diyaLight2.startAnimation(animation);
+        }
+
 
 
         box1 = findViewById(R.id.box1);

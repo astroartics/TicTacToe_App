@@ -7,6 +7,53 @@
     android:id="@+id/root_layout"
     tools:context=".MainActivity3">
 
+    <ImageView
+        android:id="@+id/DiyaBody"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:src="@drawable/diya"
+        android:layout_above="@id/Home"
+        android:scaleType="fitCenter"
+        android:layout_marginStart="10dp"
+        android:visibility="invisible"/>
+
+    <ImageView
+        android:id="@+id/DiyaLight"
+        android:layout_width="23dp"
+        android:layout_height="23dp"
+        android:src="@drawable/diya_light"
+        android:layout_above="@id/DiyaBody"
+        android:layout_alignEnd="@id/DiyaBody"
+        android:layout_marginBottom="-5dp"
+        android:layout_marginEnd="-4dp"
+        android:scaleType="fitCenter"
+        android:layout_marginStart="5dp"
+        android:visibility="invisible"/>
+
+    <ImageView
+        android:id="@+id/DiyaBody2"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:src="@drawable/diya"
+        android:layout_above="@id/Home"
+        android:layout_alignParentEnd="true"
+        android:scaleType="fitCenter"
+        android:layout_marginEnd="10dp"
+        android:visibility="invisible"/>
+
+    <ImageView
+        android:id="@+id/DiyaLight2"
+        android:layout_width="23dp"
+        android:layout_height="23dp"
+        android:src="@drawable/diya_light"
+        android:layout_above="@id/DiyaBody"
+        android:layout_alignStart="@id/DiyaBody2"
+        android:layout_marginBottom="-5dp"
+        android:layout_marginStart="-4dp"
+        android:scaleType="fitCenter"
+        android:layout_marginEnd="5dp"
+        android:visibility="invisible"/>
+
     <TextView
         android:id="@+id/NameHeading"
         android:layout_width="match_parent"
